@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0beta1 (fe3e306, 2019-09-17)"
+   sodipodi:docname="layer-new.svg"
+   id="svg1006"
+   viewBox="0 0 64 48"
+   version="1.1"
+   height="48"
+   width="64">
+  <metadata
+     id="metadata1012">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1010" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg1006"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="-8"
+     inkscape:cy="23.514071"
+     inkscape:cx="67.048383"
+     inkscape:zoom="16"
+     inkscape:pagecheckerboard="true"
+     showgrid="false"
+     id="namedview1008"
+     inkscape:window-height="1377"
+     inkscape:window-width="3440"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     inkscape:document-rotation="0"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <rect
+     id="rect998"
+     style="paint-order:normal"
+     stroke-width="3"
+     stroke="#fff"
+     fill="none"
+     ry="1"
+     rx="1"
+     height="45"
+     width="61"
+     y="1.5"
+     x="1.5" />
+  <g
+     id="g1004"
+     fill="#fff"
+     transform="translate(21,13)">
+    <rect
+       id="rect1000"
+       style="stroke-width:1;paint-order:normal"
+       ry="1"
+       rx="1"
+       height="3"
+       width="21"
+       y="10"
+       x="1" />
+    <rect
+       id="rect1002"
+       style="stroke-width:1;paint-order:normal"
+       ry="1"
+       rx="1"
+       height="3"
+       width="21"
+       y="10"
+       x="-22"
+       transform="rotate(-90)" />
+  </g>
+</svg>

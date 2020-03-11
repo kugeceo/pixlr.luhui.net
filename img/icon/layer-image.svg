@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0beta1 (fe3e306, 2019-09-17)"
+   sodipodi:docname="layer-image.svg"
+   id="svg1113"
+   viewBox="0 0 64 48"
+   version="1.1"
+   height="48"
+   width="64">
+  <metadata
+     id="metadata1119">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs1117" />
+  <sodipodi:namedview
+     inkscape:current-layer="svg1113"
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="0"
+     inkscape:cy="17.308575"
+     inkscape:cx="37.850356"
+     inkscape:zoom="10.640625"
+     inkscape:pagecheckerboard="true"
+     showgrid="false"
+     id="namedview1115"
+     inkscape:window-height="1183"
+     inkscape:window-width="2537"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     inkscape:document-rotation="0"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <rect
+     id="rect1107"
+     style="paint-order:normal"
+     stroke-width="3"
+     stroke="#fff"
+     fill="none"
+     ry="1"
+     rx="1"
+     height="45"
+     width="61"
+     y="1.5"
+     x="1.5" />
+  <circle
+     style="stroke-width:1"
+     id="circle1109"
+     fill="#fff"
+     r="3.3333404"
+     cy="15.333341"
+     cx="37.999779" />
+  <path
+     inkscape:connector-curvature="0"
+     id="path1111"
+     stroke-width=".94281"
+     fill="#fff"
+     d="M 17.289868,33.99938 H 46.70593 a 1.2582693,1.2077359 0 0 0 1.049802,-1.922337 l -4.057608,-5.288345 a 1.2582693,1.2077359 0 0 0 -1.898537,-0.1574 l -4.169409,3.809141 -9.678687,-12.61336 a 1.2582693,1.2077359 0 0 0 -2.069805,0.05593 l -9.678687,14.25003 a 1.2582693,1.2077359 0 0 0 1.087003,1.865137 z" />
+</svg>
