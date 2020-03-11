@@ -1,0 +1,105 @@
+
+<div class="title">§draw§<img src="/img/icon/close.svg" id="paint-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="paint-content" class="content">
+
+    <section id="paint-no-layer" class="pad-20">
+        <span class="tip"><img src="/img/icon/tip-lock.svg" class="tip-icon"/>§viewDrawLocked§</span>
+    </section>
+
+    <section id="paint-sub-tools">
+
+        <label class="pad-20">§tool§</label>
+        <div class="switch-icon-field stretch">
+            <input type="radio" id="paint-type-draw" name="paint-type" value="draw" checked /><label for="paint-type-draw" tooltip="§viewDrawBrushTool§" flow="up-right"><img src="/img/tool/draw.svg" /></label>
+            <input type="radio" id="paint-type-eraser" name="paint-type" value="eraser" /><label for="paint-type-eraser" tooltip="§viewDrawEraserTool§" flow="up"><img src="/img/tool/eraser.svg" /></label>
+            <input type="radio" id="paint-type-pen" name="paint-type" value="pen" /><label for="paint-type-pen" tooltip="§viewDrawPenTool§" flow="up"><img src="/img/tool/pen.svg" /></label>
+            <input type="radio" id="paint-type-shape" name="paint-type" value="shape" /><label for="paint-type-shape" tooltip="§viewDrawShapeTool§" flow="up-left"><img src="/img/tool/shape.svg" /></label>            
+        </div>
+
+        <div class="splitter"></div>
+
+        <div id="paint-draw-settings" style="display: none">
+            <div id="draw-brush"></div>
+
+        </div>
+
+        <div id="paint-eraser-settings" style="display: none">   
+            <div id="eraser-brush"></div>
+        </div>
+
+        <div id="paint-pen-settings" style="display: none">
+            <div class="select">
+                <select id="pen-mode">
+                    <option value="plain" selected>Plain</option>
+                    <option value="parallel">Parallel</option>
+                    <option value="sketchy">Sketchy</option>
+                    <option value="shaded">Shaded</option>
+                    <option value="furry">Furry</option>
+                    <option value="trail">Trail</option>
+                    <option value="crayon">Crayon</option>
+                    <option value="ink">Ink</option>
+                </select>
+            </div>
+
+            <div id="pen-size" class="range-box"></div>
+            <div id="pen-amount" class="range-box"></div>
+            <div id="pen-opacity" class="range-box"></div>
+
+            <div class="splitter small pad-16"></div>
+
+            <label class="pad-0">§color§</label>
+            <div id="pen-color-picker" class="color-picker"></div>
+        </div>
+
+        <div id="paint-shape-settings" style="display: none">
+            <label class="pad-0">§viewDrawShape§</label>            
+            <div class="switch-icon-field stretch">
+                <input type="radio" id="shape-type-square" name="shape-type" value="square" checked /><label for="shape-type-square"><img src="/img/icon/shape-square.svg" style="width:18px;height:18px;" title="§viewDrawSquare§"/></label>
+                <input type="radio" id="shape-type-circle" name="shape-type" value="circle" /><label for="shape-type-circle"><img src="/img/icon/shape-circle.svg" style="width:18px;height:18px;" title="§viewDrawCircle§"/></label>
+                <input type="radio" id="shape-type-triangle" name="shape-type" value="triangle" /><label for="shape-type-triangle"><img src="/img/icon/shape-triangle.svg" style="width:18px;height:18px;" title="§viewDrawTriangle§"/></label>
+            </div>
+            <div class="switch-icon-field stretch pad-4">
+                <input type="radio" id="shape-type-star" name="shape-type" value="star" /><label for="shape-type-star"><img src="/img/icon/shape-star.svg" title="§viewDrawStar§"/></label>
+                <input type="radio" id="shape-type-heart" name="shape-type" value="heart" /><label for="shape-type-heart"><img src="/img/icon/shape-heart.svg" title="§viewDrawHeart§"/></label>
+                <input type="radio" id="shape-type-line" name="shape-type" value="line" /><label for="shape-type-line"><img src="/img/icon/shape-line.svg" style="width:18px;height:18px;" title="§viewDrawLine§"/></label>
+            </div>
+
+            <div class="splitter small pad-16"></div>
+
+            <div id="shape-line-settings">
+                <div id="shape-line-size" class="range-box"></div>
+
+                <label class="pad-8">§viewDrawLineColor§</label>
+                <div id="shape-line-color-picker" class="color-picker"></div>                
+            </div>
+
+            <div id="shape-fill-settings">                
+                <input type="checkbox" id="shape-fill" checked />
+                <label class="pad-0 switch" for="shape-fill">§viewDrawFill§<span></span></label>
+
+                <div class="switch-content">
+                    <label class="pad-0">§color§</label>
+                    <div id="shape-color-picker" class="color-picker"></div>
+                </div>
+            </div>
+        
+            <div id="shape-outline-settings" class="pad-16">                
+                <input type="checkbox" id="shape-outline" />
+                <label class="pad-0 switch" for="shape-outline">§viewDrawOutline§<span></span></label>
+                <div class="switch-content">
+                    <div id="shape-outline-size" class="range-box pad-0"></div>
+                    <label class="pad-8">§color§</label>
+                    <div id="shape-outline-color-picker" class="color-picker pad-4"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="pad-20"></div>
+
+    </section>
+  
+</div>
+<div class="bottom">
+    <a class="button negative" id="paint-cancel">§close§</a>
+</div>

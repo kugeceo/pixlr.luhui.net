@@ -1,0 +1,39 @@
+
+<div class="title">§viewEffectTitle§<img src="/img/icon/close.svg" id="effect-close" class="close" /></div>
+<div class="splitter"></div>
+
+<div id="effect-content" class="content">
+
+    <section id="effect-layer-locked">
+        <span class="tip pad-20"><img src="/img/icon/tip-lock.svg" class="tip-icon"/>§viewEffectLocked§</span>
+    </section>
+
+    <div id="effect-settings">
+        <img class="close" id="effect-remove" src="/img/icon/close.svg" title="Remove effect">
+        <div class="range-white" id="effect-settings-amount">
+            <input type="range" value="100" min="0" max="100" step="1" id="effect-amount" name="effect_amount" oninput="effect_amount_out.value=this.value" />
+            <output name="effect_amount_out" id="effect_amount_out" for="effect_amount">100</output>
+        </div>
+    </div>
+
+    <section id="effect-presets">
+        <div id="effect-selected" class="pad-20">
+            <div class="effect-preset selected">
+                <canvas id="effect-selected-preview" width="200" height="120"></canvas>
+                <span id="effect-selected-name"></span>
+            </div>
+
+            <div class="splitter small"></div>
+        </div>
+        
+        <a class="button outline pad-10" id="effect-back"><img src="/img/icon/back-small.svg" />§back§</a>
+        <div id="effects" class="pad-20">
+
+        </div>
+    </section>
+
+</div>
+
+<div class="bottom">
+    <a class="button does negative" id="effect-cancel">§cancel§</a><a class="button does positive" id="effect-apply">§apply§</a>
+</div>

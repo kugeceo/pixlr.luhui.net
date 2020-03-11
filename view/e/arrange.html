@@ -1,0 +1,44 @@
+
+<div class="option-icon"><img src="/img/tool/arrange.svg"></div>
+
+<div id="arrange-settings">
+
+    <label class="tab-10">Top:</label><input type="number" id="arrange-top">
+    <label class="tab-10">Left:</label><input type="number" id="arrange-left">
+
+    <label class="tab-10">Width:</label><input type="number" id="arrange-width"> 
+    <span id="arrange-setting-height"><label class="tab-10">Height:</label><input type="number" id="arrange-height"></span>
+
+    <div id="arrange-lock-apect-holder">
+        <input type="checkbox" id="arrange-lock-aspect" checked>
+        <label class="switch tab-20" for="arrange-lock-aspect"><span></span>Lock aspect</label>
+    </div>
+
+    <ul id="arrange-rotate" class="icon-button-set tab-20">
+        <li id="arrange-rotate-left" tooltip="rotate left" flow="down"><img src="/img/icon/rotate-left.svg"></li>
+        <li id="arrange-rotate-right" tooltip="rotate right" flow="down"><img src="/img/icon/rotate-right.svg"></li>
+        <li id="arrange-flip-horizontal" tooltip="flip horizontal" flow="down"><img src="/img/icon/flip-horizontal.svg"></li>
+        <li id="arrange-flip-vertical" tooltip="flip vertical" flow="down"><img src="/img/icon/flip-vertical.svg"></li>
+    </ul>
+ 
+    <ul class="icon-button-set tab-20">
+        <li id="arrange-duplicate" tooltip="duplicate" flow="down"><img src="/img/icon/copy.svg"/></li>
+        <li id="arrange-delete"  tooltip="delete (del)" flow="down"><img src="/img/icon/delete.svg"></li>
+    </ul>
+
+</div>
+
+<div id="arrange-layer-locked" style="display: none;">
+    <a class="button outline tab-10" id="arrange-convert">Unlock</a>
+    <a class="button outline tab-10" id="arrange-duplicate-button">Duplicate</a>
+
+    <div class="tab-20">Layer is locked in position, unlock to enable transforms.</div>
+</div>
+
+<div id="arrange-no-layer" style="display: none;">
+    <div class="tab-10">No layer, select a layer in the right hand layer bar.</div>
+</div>
+
+<div class="tab-20" tooltip="Tool settings" flow="down">
+    <div id="arrange-tool-settings" class="icon-drop"><img src="/img/icon/settings.svg"/></div>    
+</div>

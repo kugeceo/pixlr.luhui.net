@@ -1,0 +1,744 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/images/pixlr-logo3-grey-16x16.ico">
+<link rel="icon" href="/images/pixlr-logo3-grey-16x16.ico">
+
+<link rel="stylesheet" type="text/css" href="/css/home-pixlr-new.min.css?v=05022020">
+<link rel="stylesheet" type="text/css" href="/css/index-new.min.css?v=05022020">
+<link rel="stylesheet" type="text/css" href="/css/mobile_view.min.css?v=05022020">
+<link rel="stylesheet" type="text/css" href="/css/twentytwenty.min.css?v=05022020">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+
+<script src="/js/jquery.3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.3.3.7.min.js"></script>
+<script type="text/javascript" src="/js/jquery.event.move.js"></script>
+<script type="text/javascript" src="/js/jquery.twentytwenty.js"></script>
+<script type="text/javascript" src="/js/bs-stepper.min.js"></script>
+
+<title>Photo editor online - Pixlr.com</title>
+<meta name="description" content="Discover free and premium online photo editor! Effects, filters, overlays, simple to expert tools. You'll find a Pixlr image editor just for you!">
+<meta property="og:site_name" content="Photo editor online - Pixlr.com"/>
+<meta property="og:title" content="Photo editor online - Pixlr.com" />
+<meta property="og:description" content="Discover free and premium online photo editor! Effects, filters, overlays, simple to expert tools. You'll find a Pixlr image editor just for you!" />
+<meta property="og:image" content="/images/best-photo-editor-cover.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/pixlr.com" />
+
+<!-- Google Tag Manager -->
+<script>
+//<![CDATA[
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+    {'gtm.start': new Date().getTime(),event:'gtm.js'}
+    );var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '/js/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4LP88G');
+  //]]>
+</script>
+
+<style>
+    @media screen and (max-width: 921px) {
+        .nav-bg {
+            background-color: transparent;
+        }
+    }
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="overlay" id="overlay">
+            <nav class="overlay-menu" style="width: 100%;">
+                <div class="logo" style="padding: 23px 0px;">
+                    <a href="/" title="pixlr home" aria-label="pixlr home">
+                        <img id="pixlr-logo" src="/images/pixlr-logo-201812-white-326x80.png" alt="pixlr logo" />
+                    </a>
+                </div>
+                <ul>
+                    
+                        <li><a href="/login?callback=/" title="login" aria-label="login">login</a></li>
+                    
+
+                    <li><a href="/x/" title="pixlr x" aria-label="pixlr x">pixlr x</a></li>
+                    <li class="rel-trick"><a href="/editor/" title="pixlr editor" aria-label="pixlr editor">pixlr e</a></li>
+                    <li><a href="/market" target="_blank" rel="noopener" title="pixlr express" aria-label="pixlr express">pixlr market</a></li>
+                    <li><a href="/pricing" title="pricing plan" aria-label="pricing plan">pricing plan</a></li>
+                    
+                    
+                        <li><a href="/logout?callback=/" title="logout" aria-label="logout">logout</a></li>
+                    
+                </ul>
+                <div class="social-icon">
+                    <a href="https://www.facebook.com/luhuiceo" title="pixlr facebook" rel="nofollow noopener"
+                        aria-label="pixlr facebook" target="_blank">
+                        <img src="/images/FB_white@2x.png" class="image-data" alt="pixlr facebook" /></a>
+                    <a href="http://www.instagram.com/luhuiceo" title="pixlr instagram" rel="nofollow noopener"
+                        aria-label="pixlr instagram" target="_blank">
+                        <img src="/images/IG_white@2x.png" class="image-data" alt="pixlr instagram" /></a>
+                    <a href="https://www.twitter.com/luhuiceo/" title="pixlr twitter" rel="nofollow noopener"
+                        aria-label="pixlr twitter" target="_blank"><img src="/images/TWITTER_white@2x.png"
+                            class="image-data" alt="pixlr twitter" /></a>
+                </div>
+            </nav>
+        </div>
+        <div class="has-padding nav-bg">
+          <div class="header-flex wrapper">
+                <div class="logo">
+                    <a href="/" title="pixlr home" aria-label="pixlr home">
+                        <img id="pixlr-logo" src="/images/pixlr-logo-201812-white-326x80.png" alt="pixlr logo" />
+                    </a>
+                </div>
+                <nav>
+                    <div class="button_container" id="toggle">
+                        <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+                    </div>
+                    <ul class="menu_full">
+                        <li><a href="/x/" title="pixlr x" aria-label="pixlr x" target="_blank" rel="noopener">pixlr x</a></li>
+                        <li><a href="/e/" title="pixlr e" target="_blank" rel="noopener" aria-label="pixlr e">pixlr e</a></li>
+                        <li><a href="/market/" target="_blank" rel="noopener" title="pixlr market" aria-label="pixlr market">pixlr market</a></li>
+                        <li><a href="/pricing" title="pricing plan" aria-label="pricing plan">pricing plan</a></li>
+                        
+                        <div class="mainnav pull-right">
+                            <ul>
+                                <li class="login-button">
+
+                                    
+                                        <a href="/login?callback=/" class="button-inmaginesso" title="login" aria-label="login">
+                                    
+                                        <span class="text-button">
+                                            <span class="text-bold" style="padding:25px">LOGIN</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).width() > 921) {
+                if ($(document).scrollTop() > $(window).height() * 0) {
+                    $(".nav-bg").css("background-color", "rgb(38, 64, 89)");
+                } else {
+                    $(".nav-bg").css("background-color", "rgba(38, 64, 89, 0.3)");
+                }
+            } else {
+                $(".nav-bg").css("background-color", "transparent");
+            }
+        });
+        if ($(window).width() <= 921) {
+            $(".nav-bg").css("background-color", "transparent");
+        }
+    });
+    </script>
+<link rel="stylesheet" href="/css/aos.css">
+<script src="/js/aos.js"></script>
+<section class="index-section">
+    <div class="container-fluid wrapper">
+        <div class="row" style="padding: 0px;">
+            <div class="col-md-6 col-12 col-sm-12">
+                <div class="next-generation">
+                    <h1>NEXT GENERATION PHOTO EDITING</h1>
+                    <p>Experience next level, intuitive photo editing with AI-powered tools for quick yet professional edits. Designed to be easy, you can now edit images smarter and faster for Free - with Pixlr. No steep learning curve, no design experience needed.  </p>
+                    <span><a class="hero-button" href="/x/" style="font-family: Nexa;" title="photo editor pixlr x" aria-label="photo editor pixlr x">start editing</a></span>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 col-sm-12" style="padding: 0px;">
+                <div class="col-md-12 index-img-1">
+                    <img class="hero-desktop" src="/images/hero-v2.png" alt="hero-desktop">
+                    <img class="hero-mobile" src="/images/hero-v2m.png" alt="hero-mobile">
+                </div>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-up">
+            <div class="col-md-6 col-12 col-sm-12">
+                <div class="smarter-tools-div">
+                    <img src="/images/smarter.png" alt="" class="square">
+                    <p class="text-uppercase smarter-tools">Smarter tools</p>
+                    <p class="smarter-tools-2">Say goodbye to boring and repetitive editing tasks with AI design tools. One click is all it takes to remove backgrounds perfectly from your photos, cut out every strand of hair and more!</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 col-sm-12" style="padding: 0px;">
+                <div class="col-md-12 index-img-2">
+                    <img class="smarter-desktop" src="/images/smarter-index.png" alt="smarter-index-desktop">
+                    <img class="smarter-mobile" src="/images/faster_img_m.png" alt="smarter-index-mobile">
+                </div>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-up">
+            <div class="col-md-6 col-12 col-sm-12" style="padding: 0px;">
+                <div class="faster-editing-div">
+                    <img src="/images/faster.png" alt="" class="square">
+                    <p class="text-uppercase faster-editing">Faster editing time</p>
+                    <p class="faster-editing-2">Simpler steps, equally stunning results. Just toggle on and off, or drag sliders from left to right to edit your photos. Achieving unique aesthetic photo effects becomes so much simpler with Pixlr.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 col-sm-12" style="padding: 0px;">
+                <div class="col-md-12 index-img-2">
+                    <img class="faster-desktop" src="/images/faster_img.png" alt="faster-desktop">
+                    <img class="faster-mobile" src="/images/easier_img-m.png" alt="faster-desktop">
+                </div>
+            </div>
+        </div>
+        <div class="row" data-aos="fade-up">
+            <div class="col-md-6 col-12 col-sm-12">
+                <div class="easier-content-div">
+                    <img src="/images/easier.png" alt="" class="square">
+                    <p class="text-uppercase easier-content">Easier content creation</p>
+                    <p class="easier-content-2">Don’t sweat the small stuff. Instead of creating graphic elements from scratch, browse our well-stocked library of stickers, icons and decorative texts to add to your photos. Now you have more time to perfect your edits. </p>
+                </div>
+            </div>
+            <div class="col-md-6 col-12 col-sm-12" style="padding: 0px;">
+                <div class="col-md-12 index-img-2">
+                    <img class="easier-desktop" src="/images/easier_img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container-fluid wrapper">
+        <div class="row" data-aos="fade-up">
+            <div class="col-md-6 col-12 col-sm-12">
+                <div class="mobile-index">
+                    <img class="preview-image" src="/images/mobile_img.png" alt="pixlr-web">
+                </div>
+            </div>
+            <div class="col-md-6 col-12 col-sm-12">
+                <div>
+                    <p class="text-uppercase enjoy-seamless mobile-description">Enjoy seamless photo editing on the go! </p>
+                    <p class="mobile-description-1">Edit your photos wherever you are. The powerful online photo editor works like a charm on your mobile device too, so you can get into editing mode whenever you feel like it. Try Pixlr now.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container" data-aos="fade-up">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-uppercase text-center start-with-x">Start with X, Advance with E</p>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 50px;">
+            <div class="col-md-12">
+                <p class="text-center start-with-x-description">New to Pixlr photo editor? It’s a natural learning curve with us. Just start with Pixlr X, and once you’re familiar with it, simply switch to Pixlr Editor to perform even more creative edits!</p>
+            </div>
+        </div>
+        <div class="row stepper-tablet" style="margin-bottom: 50px;">
+            <div class="col-md-12 col-sm-6 text-center">
+                <div class="step-mobile step-how">
+                    <input type="radio" name="x-save-e" id="openX" checked/><label for="openX">Open in X</label>
+                    <img alt="right-arrow" src="/images/right-arrow.png" />
+                    <input type="radio" name="x-save-e" id="saveClose" /><label for="saveClose">Close / Save</label>
+                    <img alt="right-arrow" src="/images/right-arrow.png" />
+                    <input type="radio" name="x-save-e" id="openE" /><label for="openE">Open in E</label>
+                </div>
+            </div>
+            <div class="col-md-12 col-sm-6">
+                <div class="laptop-step-div">
+                    <img class="laptop-step-img" alt="openX" id="openXimg" src="/images/open_in_x.png"/>
+                    <img class="laptop-step-img" alt="save/close" id="openCloseimg" style="display: none;" src="/images/saveclose.png"/>
+                    <img class="laptop-step-img" alt="openE" id="openEimg" style="display: none;"src="/images/openE.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container feature-index">
+        <div class="row" style="margin: 0px;" data-aos="fade-up">
+            <div class="col-md-6" style="padding: 0px;">
+                <div class="box-index box-bottom-1">
+                    <img style="width: 170px;height: 30px;" src="/images/pixlr_x_logo.svg" alt="pixlr x">
+                    <h1 class="pixlr-catch">THE EASIEST-TO-USE PHOTO EDITOR</h1>
+                    <ul>
+                        <li class="feature fa fa-check">
+                            <p>Convenient photo editing for content creators and beginners.</p>
+                        </li>
+                        <li class="feature fa fa-check">
+                            <p>Easy to master.</p>
+                        </li>
+                        <li class="feature fa fa-check">
+                            <p>Perfect for quick, playful photo edits.</p>
+                        </li>
+                        <li class="feature fa fa-check">
+                            <p>One-click to add artistic effects to photos.</p>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <a class="haha-button" href="/x/" target="_blank" rel="noopener" title="photo editor pixlr x" aria-label="photo editor pixlr x">launch pixlr x</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" style="padding: 0px;">
+                <div class="box-index box-bottom-2">
+                    <img style="width: 170px;height: 30px;" src="/images/pixlr_e_logo.svg" alt="pixlr ">
+                    <h1 class="pixlr-catch">POWERFUL IMAGE EDITOR FOR PROS</h1>
+                    <ul>
+                        <li class="feature fa fa-check">
+                            <p>Built with every designer’s must-have editing tools, but better.</p>
+                        </li>
+                        <li class="feature fa fa-check">
+                            <p>Intuitive navigation.</p>
+                        </li>
+                        <li class="feature fa fa-check">
+                            <p>Designed for detailed image editing.</p>
+                        </li>
+                        <li class="feature fa fa-check">
+                            <p>Achieve advanced edits - in fewer steps.</p>
+                        </li>
+                    </ul>
+                    <div class="">
+                        <a class="haha-button" href="/e/" target="_blank" rel="noopener" title="photo editor pixlr e" aria-label="photo editor pixlr e">launch pixlr e</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="parallax parallax-mobile" data-type="background" data-speed="10" style="background-image: url('/images/kaleidoscope_3a.jpg');">
+</section>
+
+<section class="pixlr-carousel">
+    <div class="container">
+        <h1>THE BEST FREE PHOTO EDITOR ONLINE!</h1>  
+        <div id="myCarousel" class="carousel slide carousel-desktop" data-ride="carousel">
+            <ol class="carousel-indicators" style="z-index: -2;">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li data-target="#myCarousel" data-slide-to="3"></li>
+                <li data-target="#myCarousel" data-slide-to="4"></li>
+                <li data-target="#myCarousel" data-slide-to="5"></li>
+                <li data-target="#myCarousel" data-slide-to="6"></li>
+                <li data-target="#myCarousel" data-slide-to="7"></li>
+            </ol>         
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="carousel-item row">
+                        <div class="carousel-image">
+                            <div class="image-container">
+                                <img src="/images/techradar.png" alt="techradar">
+                            </div>
+                        </div>
+                        <div class="carousel-text">
+                            <div class="text-container">
+                                <p>“With Pixlr X, you can make fine changes to colors and saturation, sharpen and blur images, apply vignette effects and frames, and combine multiple images. There's also support for layers, which you won't find in many free online photo editors, and an array of tools for painting and drawing. A great choice for even advanced tasks.”</p>
+                                <p>techradar.com/sg | Dec 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row">
+                        <div class="carousel-image">
+                            <div class="image-container">
+                                <img src="/images/digitaltrends.png" alt="digitaltrends">
+                            </div>
+                        </div>
+                        <div class="carousel-text">
+                            <div class="text-container" style="padding-bottom: 12rem;">
+                                <p>“The best free photo-editing software”</p>
+                                <p>digitaltrends.com | Jan 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row">
+                        <div class="carousel-image">
+                            <div class="image-container">
+                                <img src="/images/G2.png" alt="G2">
+                            </div>
+                        </div>
+                        <div class="carousel-text">
+                            <div class="text-container" style="padding-bottom: 7rem;">
+                                <p>“The website is very easy to use, and it is something that myself and my team were able to understand within minutes of using it.”</p>
+                                <p>g2.com | Benjamin L, Sales Marketing Manager | Dec 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row">
+                        <div class="carousel-image">
+                            <div class="image-container">
+                                <img src="/images/G2.png" alt="G2">
+                            </div>
+                        </div>
+                        <div class="carousel-text">
+                            <div class="text-container">
+                                <p>“I started using it recently and as a photographer, I have to recognize that Pixlr is a very good tool when editing photos, how easy it is to manage the interface makes everything perfect.<br><br>It also includes many features that you can use as filters, blurs, color measurement and help a lot when placing texts.”</p>
+                                <p>g2.com | Caribe F, Professional Photographer | Sept 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row">
+                        <div class="carousel-image">
+                            <div class="image-container">
+                                <img src="/images/G2.png" alt="G2">
+                            </div>
+                        </div>
+                        <div class="carousel-text">
+                            <div class="text-container">
+                                <p>“I like Pixlr because it’s free to use, especially compared to a lot of competitors that are expensive, either just a one-time cost or a monthly subscription.
+                                    <br><br>
+                                    I also like Pixlr because it’s very easy to use. The software is very intuitive, and if there’s anything I don’t understand, there are plenty of tutorials and videos I can find online to help me out.” </p>
+                                <p>g2.com | Will K, CEO from F&B industry | Sept 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row">
+                        <div class="carousel-image">
+                            <div class="image-container">
+                                <img src="/images/G2.png" alt="G2">
+                            </div>
+                        </div>
+                        <div class="carousel-text" style="padding-bottom: 7rem;">
+                            <div class="text-container">
+                                <p>“Pixlr has a lot of tools that allow you to edit your photos precisely, but if you're looking for simple and quick editing there's a generous selection of practical filters.”</p>
+                                <p>g2.com | Fernanda Q, Web Developer | Jul 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row">
+                        <div class="carousel-image">
+                            <div class="image-container">
+                                <img src="/images/techadvisor.png" alt="techadvisor">
+                            </div>
+                        </div>
+                        <div class="carousel-text">
+                            <div class="text-container">
+                                <p>“Pixlr has one giant benefit over most of the other apps on this list: it runs entirely in your browser, meaning you can access it on any PC or Mac, with no need to install anything.”</p>
+                                <p>techadvisor.co.uk | Jun 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row">
+                        <div class="carousel-image">
+                            <div class="image-container">
+                                <img src="/images/squared.png" alt="squared">
+                            </div>
+                        </div>
+                        <div class="carousel-text">
+                            <div class="text-container">
+                                <p>“Pixlr as a photo editor excels in its variability. Are you an amateur or a photography professional? You can enhance your photo with the Pixlr editor very easily. You will be surprised with various overlays and photo effects. The editor is also available as a SaaS web editor.”</p>
+                                <p>squared.one | Apr 2019</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control carousel-control-prev" href="#myCarousel" data-slide="prev">
+                <span class="fa fa-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control carousel-control-next" href="#myCarousel" data-slide="next">
+                <span class="fa fa-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div id="mobileCarousel" class="carousel slide carousel-mobile" data-ride="carousel">
+            <ol class="carousel-indicators" style="z-index: -2;">
+                <li data-target="#mobileCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#mobileCarousel" data-slide-to="1"></li>
+                <li data-target="#mobileCarousel" data-slide-to="2"></li>
+                <li data-target="#mobileCarousel" data-slide-to="3"></li>
+                <li data-target="#mobileCarousel" data-slide-to="4"></li>
+                <li data-target="#mobileCarousel" data-slide-to="5"></li>
+                <li data-target="#mobileCarousel" data-slide-to="6"></li>
+                <li data-target="#mobileCarousel" data-slide-to="7"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="carousel-item row" style="display: flex; flex-direction: column; width: 246px;">
+                        <img style="height: 92px; width:auto;" src="/images/techradar.png" alt="techradar">
+                        <p>“With Pixlr X, you can make fine changes to colors and saturation, sharpen and blur images, apply vignette effects and frames, and combine multiple images. There's also support for layers, which you won't find in many free online photo editors, and an array of tools for painting and drawing. A great choice for even advanced tasks.”</p>
+                        <p>techradar.com/sg | Dec 2019</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row" style="display: flex; flex-direction: column; width: 246px;">
+                        <img style="height: 92px; width:auto;" src="/images/digitaltrends.png" alt="digitaltrends">
+                        <p>“The best free photo-editing software”</p>
+                        <p>digitaltrends.com | Jan 2019</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row" style="display: flex; flex-direction: column; width: 246px;">
+                        <img style="height: 92px; width:auto;" src="/images/G2.png" alt="G2">
+                        <p>“The website is very easy to use, and it is something that myself and my team were able to understand within minutes of using it.”</p>
+                        <p>g2.com | Benjamin L, Sales Marketing Manager | Dec 2019</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row" style="display: flex; flex-direction: column; width: 246px;">
+                        <img style="height: 92px; width:auto;" src="/images/G2.png" alt="G2">
+                        <p>“I started using it recently and as a photographer, I have to recognize that Pixlr is a very good tool when editing photos, how easy it is to manage the interface makes everything perfect.<br><br>It also includes many features that you can use as filters, blurs, color measurement and help a lot when placing texts.”</p>
+                        <p>g2.com | Caribe F, Professional Photographer | Sept 2019</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row" style="display: flex; flex-direction: column; width: 246px;">
+                        <img style="height: 92px; width:auto;" src="/images/G2.png" alt="G2">
+                        <p>“I like Pixlr because it’s free to use, especially compared to a lot of competitors that are expensive, either just a one-time cost or a monthly subscription.
+                            <br><br>
+                            I also like Pixlr because it’s very easy to use. The software is very intuitive, and if there’s anything I don’t understand, there are plenty of tutorials and videos I can find online to help me out.” </p>
+                        <p>g2.com | Will K, CEO from F&B industry | Sept 2019</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row" style="display: flex; flex-direction: column; width: 246px;">
+                        <img style="height: 92px; width:auto;" src="/images/G2.png" alt="G2">
+                        <p>“Pixlr has a lot of tools that allow you to edit your photos precisely, but if you're looking for simple and quick editing there's a generous selection of practical filters.”</p>
+                        <p>g2.com | Fernanda Q, Web Developer | Jul 2019</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row" style="display: flex; flex-direction: column; width: 246px;">
+                        <img style="height: 92px; width:auto;" src="/images/techadvisor.png" alt="techadvisor">
+                        <p>“Pixlr has one giant benefit over most of the other apps on this list: it runs entirely in your browser, meaning you can access it on any PC or Mac, with no need to install anything.”</p>
+                        <p>techadvisor.co.uk | Jun 2019</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="carousel-item row" style="display: flex; flex-direction: column; width: 246px;">
+                        <img style="height: 92px; width:auto;" src="/images/squared.png" alt="squared">
+                        <p>“Pixlr as a photo editor excels in its variability. Are you an amateur or a photography professional? You can enhance your photo with the Pixlr editor very easily. You will be surprised with various overlays and photo effects. The editor is also available as a SaaS web editor.”</p>
+                        <p>squared.one | Apr 2019</p>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control carousel-control-prev" href="#mobileCarousel" data-slide="prev">
+                <span class="fa fa-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control carousel-control-next" href="#mobileCarousel" data-slide="next">
+                <span class="fa fa-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="pixlr-statistics-background">
+    <div class="container pixlr-statistics-container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="col-md-12">
+                    <h6 class="pixlr-more-than">more than</h6>
+                    <div class="faded-text-container">
+                        <div id="social-count">
+                            <p class="social-count-130">130</p>
+                            <p class="social-count-10" style="display: none;">10</p>
+                            <p style="display: none;">500</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="faded-text-container-magnitude-type">
+                    <div id="social-magnitude">
+                        <p>million</p>
+                        <p style="display: none;" class="social-magnitude-10">billion</p>
+                        <p style="display: none;" class="social-magnitude-500">million</p>
+                    </div>
+                    <div id="social-type">
+                        <p>app downloads</p>
+                        <p style="display: none;" class="social-magnitude-10">edited images</p>
+                        <p style="display: none;" class="social-magnitude-500">total users</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <img class="world-map" style="margin-left: -70px; margin-top: 15px;" src="/images/map.png" alt="world-map" style="z-index: 1">
+            </div>
+        </div>
+    </div>
+    <div class="webby-img">
+        <img src="/images/webby.jpg" alt="world-map" style="z-index: 1">
+    </div>
+</section>
+<!-- animation required in index, about, pricing -->
+<script src="/js/animations.js"></script>
+<script>
+    const changePosition = 0.65;
+
+    $('#openX').on('click',function(){
+        $('#openXimg').css('z-index','0');
+        $('#openCloseimg').css('z-index','-1');
+        $('#openEimg').css('z-index','-2');
+        $('#openXimg').show().siblings('img').hide();
+        jQuery(this).toggleClass('active').siblings('button').removeClass('active');
+    });
+    $('#saveClose').on('click',function(){
+        $('#openXimg').css('z-index','-2');
+        $('#openCloseimg').css('z-index','0');
+        $('#openEimg').css('z-index','-1');
+        $('#openCloseimg').show().siblings('img').hide();
+        jQuery(this).toggleClass('active').siblings('button').removeClass('active');
+    });
+    $('#openE').on('click',function(){
+        $('#openXimg').css('z-index','-2');
+        $('#openCloseimg').css('z-index','-1');
+        $('#openEimg').css('z-index','0');
+        $('#openEimg').show().siblings('img').hide();
+        jQuery(this).toggleClass('active').siblings('button').removeClass('active');
+    });
+</script>
+<footer style="background: #3d3d3d">
+  <div class="wrapper">
+    <div class="footer-link-container">
+    <div class="footer-message">
+      <img src="/images/pixlr-logo-201812-white-326x80.png" alt="pixlr">
+      <div></div>
+      <p>Pixlr by Inmagine is part of a creative ecosystem on a mission to make design easy for everyone.</p>
+    </div>
+    <div class="footer-links">
+      <ul class="links-column">
+        <li class="column-head">Company</li>
+        <li class="column-last-child about-us-footer-link"><a href="/about-us">About Us</a></li>
+        <li class="column-head">Products</li>
+        <li><a href="/x/" target="_blank" rel="noopener">Pixlr X</a></li>
+        <li><a href="/e/" target="_blank" rel="noopener">Pixlr E</a></li>
+        <li><a href="/editor/" target="_blank" rel="noopener">Pixlr Editor</a></li>
+        <li><a href="/express" target="_blank" rel="noopener">Pixlr Express</a></li>
+        <li><a href="/pro/" target="_blank" rel="noopener">Pixlr Pro</a></li>
+        <li><a href="/market/" target="_blank" rel="noopener">Pixlr Market</a></li>
+        <li class="column-last-child"><a href="/mobile">Pixlr Mobile</a></li class="column-last-child">
+      </ul>
+      <ul class="links-column">
+        <li class="column-head">Legal</li>
+        <li><a href="/license-and-services-agreement" class="link-spacing">License and Services Agreement</a></li>
+        <li><a href="/market/documents?tab=pixlr-creator-agreement" target="_blank" rel="noopener" class="link-spacing">Pixlr Creator Agreement</a></li>
+        <li><a href="/terms-of-use">Terms of Use</a></li>
+        <li><a href="/privacy-policy">Privacy Policy</a></li>
+        <li class="column-last-child"><a href="/cookie-policy">Cookie Policy</a></li class="column-last-child">
+      </ul>
+      <ul class="links-column">
+        <li>
+          <ul>
+            <li class="column-head">Earn</li>
+            <li class="column-last-child"><a href="/contributor/" target="_blank" rel="noopener">Become a Creator</a></li class="column-last-child">
+          </ul>
+        </li>
+        <li>
+          <ul>
+            <li class="column-head">Help</li>
+            <li><a href="/contactus/" target="_blank" rel="noopener">Contact Us</a></li>
+            <li><a href="/pricing">Pricing</a></li>
+            <li class="column-last-child"><a href="/support/" target="_blank" rel="noopener">Support</a></li class="column-last-child">
+          </ul>
+        </li>
+      </ul>
+      <ul class="links-column">
+        <li class="column-head">Follow Us</li>
+        <li><a href="http://www.luhui.net/" target="_blank" rel="noopener">Blog</a></li>
+        <li><a href="https://twitter.com/luhuiceo" target="_blank" rel="noopener">Twitter</a></li>
+        <li><a href="https://www.facebook.com/luhuiceo" target="_blank" rel="noopener">Facebook</a></li>
+        <li class="column-last-child"><a href="https://www.instagram.com/luhuiceo/" target="_blank" rel="noopener">Instagram</a></li class="column-last-child">
+      </ul>
+    </div>
+    </div>
+  </div>
+  <div class="inmagine-product" style="background: #222222">
+    <div class="wrapper">
+      <div class="footer-products-container">
+        <div><a target="_blank" rel="nofollow noopener" href="/www.inmagine.com/"><img src="/images/inmagine_footer.png" alt="inmagine"></a></div>
+        <div><a target="_blank" rel="nofollow noopener" href="/www.123rf.com/"><img src="/images/123rf@2x.png" alt="inmagine group" class="blur"></a></div>
+        <div><a target="_blank" rel="nofollow noopener" href="/designs.ai/"><img src="/images/DSN@2x.png" alt="inmagine group" class="blur"></a></div>
+        <div><a target="_blank" rel="nofollow noopener" href="/pixlr.com/"><img src="/images/Pixlr@2x.png" alt="inmagine group" class="blur"></a></div>
+        <div class="footer-copyright text-right"></div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid" style="width: 100%;background-color: #EC5E26;height: 3px;"></div>
+</footer>
+<script type="text/javascript" src="/js/main.js"></script>
+<script type="text/javascript" src="/js/ScrollMagic.min.js"></script>
+<script>!function(){var t;document.getElementById("toggle").addEventListener("click",function(){var t=document.getElementById("toggle"),e=document.getElementById("overlay"),i=document.getElementsByTagName("body")[0];t.classList.contains("active")?(t.classList.remove("active"),e.classList.remove("open"),i.classList.remove("noScroll")):(t.classList.add("active"),e.classList.add("open"),i.classList.add("noScroll"))}),(t=function(t,e,i){this.toRotate=e,this.el=t,this.loopNum=0,this.period=parseInt(i,10)||2e3,this.txt="",this.tick(),this.isDeleting=!1}).prototype.tick=function(){var t=this.loopNum%this.toRotate.length,e=this.toRotate[t];this.isDeleting?this.txt=e.substring(0,this.txt.length-1):this.txt=e.substring(0,this.txt.length+1),this.el.innerHTML='<span class="wrap">'+this.txt+"</span>";var i=this,s=300-100*Math.random();this.isDeleting&&(s/=2),this.isDeleting||this.txt!==e?this.isDeleting&&""===this.txt&&(this.isDeleting=!1,this.loopNum++,s=500):(s=this.period,this.isDeleting=!0),setTimeout(function(){i.tick()},s)},window.onload=function(){for(var e=document.getElementsByClassName("txt-rotate"),i=0;i<e.length;i++){var s=e[i].getAttribute("data-rotate"),n=e[i].getAttribute("data-period");s&&new t(e[i],JSON.parse(s),n)}var o=document.createElement("style");o.type="text/css",o.innerHTML=".txt-rotate > .wrap { border-right: 0.08em solid #e3699a }",document.body.appendChild(o)}}();</script>
+<script>
+  $(window).on('load', function() {
+    $(".twentytwenty-container").twentytwenty({
+      // move_slider_on_hover: true, // Move slider on mouse hover?
+      move_with_handle_only: false, // Allow a user to swipe anywhere on the image to control slider movement. 
+      click_to_move: true 
+    });
+  });
+</script>
+
+
+
+
+
+
+	
+
+<!--百度自动推送代码-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--百度自动推送代码-->
+
+
+<!-- 网址安全插件开始 -->
+<script type="text/javascript">
+	var _svq_ = _svq_ || [];
+	_svq_.push(['set_api_key', '16adflfafads9gf28327005056b68c3d']);
+	_svq_.push(['set_noicon_class', '']); //链接前不显示任何图标，如果需要显示，请去掉这句
+	_svq_.push(['set_nopopup_class', '-sv-no-popup']); 
+	_svq_.push(['check_page']);
+	(function(){   
+		var aq = document.createElement('script');
+		aq.type = 'text/javascript'; 
+		aq.async = true;   
+		aq.charset = 'utf-8';
+		aq.src = 'http://openapi.anquan.org/static/aq.js';    
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(aq, s); 
+	})();
+</script>	
+<!-- 网址安全插件结束 --> 
+
+<div style="display:none">
+    <script src="http://s11.cnzz.com/z_stat.php?id=610720&web_id=610720" language="JavaScript"></script>
+</div>
+
+<div class="copyright pr" style="text-align: center; margin-left: 0px;">
+	<p>
+		Copyright&nbsp;2004-01-11&nbsp;luhui.net&nbsp;all rights reserved
+	</p>
+</div>
+
+
+</body>
+</html>

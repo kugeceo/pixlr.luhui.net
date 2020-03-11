@@ -1,0 +1,63 @@
+
+<div class="option-icon"><img src="/img/tool/cutout.svg"></div>
+
+<div id="cutout-no-layer" style="display: none">
+    <div class="tab-10">Select a image or text layer to create a cutout on.</div>
+</div>
+
+<div id="cutout-sub-tools">
+
+    <a class="button outline tab-10" id="cutout-auto">AI Auto</a>
+
+    <label class="tab-20">Tool:</label>
+    <div class="switch-icon-field tab-5">
+        <input type="radio" id="cutout-type-shape" name="cutout-type" value="shape" checked/><label for="cutout-type-shape" tooltip="shape cutout" flow="down"><img src="/img/tool/shape.svg" /></label>
+        <input type="radio" id="cutout-type-magic" name="cutout-type" value="magic" /><label for="cutout-type-magic" tooltip="magic cutout" flow="down"><img src="/img/tool/wand.svg"/></label>
+        <input type="radio" id="cutout-type-draw" name="cutout-type" value="draw" /><label for="cutout-type-draw" tooltip="draw cutout" flow="down"><img src="/img/tool/draw.svg"/></label>
+        <input type="radio" id="cutout-type-lasso" name="cutout-type" value="lasso" /><label for="cutout-type-lasso" tooltip="lasso cutout" flow="down"><img src="/img/tool/lasso.svg"/></label>
+    </div>
+
+    <label class="tab-20">Mode:</label>
+    <div class="switch-icon-field tab-5">
+        <input type="radio" id="cutout-mode-keep" name="cutout-mode" value="keep" checked/><label for="cutout-mode-keep" tooltip="add to cutout" flow="down"><img src="/img/icon/selection-add.svg"/></label>
+        <input type="radio" id="cutout-mode-remove" name="cutout-mode" value="remove" /><label for="cutout-mode-remove" tooltip="remove from cutout" flow="down"><img src="/img/icon/selection-remove.svg"/></label>
+    </div>
+
+    <div id="cutout-magic-settings" class="tab-20">
+
+        <div id="cutout-magic-tolerance" class="range-box"></div>
+        <div id="cutout-magic-feather" class="range-box tab-20"></div>
+
+        <input type="checkbox" id="cutout-magic-contiguous" checked>
+        <label class="tab-20 switch" for="cutout-magic-contiguous"><span></span>Contiguous</label>
+    </div>
+
+    <div id="cutout-draw-settings" class="tab-20" style="display: none;">
+        <label>Brush:</label>
+        <div id="cutout-draw-brush"></div>
+    </div>
+
+    <div id="cutout-lasso-settings" class="tab-20" style="display: none;">
+        <div id="cutout-lasso-feather" class="range-box"></div>
+    </div>
+
+    <div id="cutout-shape-settings" class="tab-20" style="display: none;">
+
+        <label>Shape:</label>
+        <div class="switch-icon-field tab-5">
+            <input type="radio" id="cutout-shape-type-square" name="cutout-shape-type" value="square" checked /><label for="cutout-shape-type-square"><img src="/img/icon/shape-square.svg" title="Square shape"/></label>
+            <input type="radio" id="cutout-shape-type-circle" name="cutout-shape-type" value="circle" /><label for="cutout-shape-type-circle"><img src="/img/icon/shape-circle.svg" title="Circle shape"/></label>
+            <input type="radio" id="cutout-shape-type-line" name="cutout-shape-type" value="line" /><label for="cutout-shape-type-line"><img src="/img/icon/shape-line.svg" title="Line shape"/></label>
+        </div>
+
+        <div id="cutout-shape-feather" class="range-box tab-20"></div>
+    </div>
+
+    <input type="checkbox" id="cutout-show-ghost">
+    <label class="tab-20 switch" for="cutout-show-ghost"><span></span>Hint removed</label>
+    
+    <a class="button outline tab-20" id="cutout-extract">extract</a>
+    <a class="button outline tab-10" id="cutout-invert">invert</a>
+    <a class="button outline tab-10" id="cutout-reset">reset</a>
+
+</div>

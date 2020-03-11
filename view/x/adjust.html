@@ -1,0 +1,135 @@
+
+<div class="title">§viewAdjustTitle§<img src="/img/icon/close.svg" id="adjust-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="adjust-content" class="content">
+
+    <section id="adjust-layer-locked">
+        <span class="tip pad-20"><img src="/img/icon/tip-lock.svg" class="tip-icon"/>§viewAdjustLocked§</span>
+    </section>
+    
+    <section id="adjust-settings">
+
+        <a class="button outline pad-20" id="auto-fix-apply"><img src="/img/tool/wand.svg"/> §viewAdjustAuto§</a>
+        <div id="adjust-debug" style="display: none">
+            <a class="button outline pad-10" id="preset-print">make preset</a>
+        </div>
+        <div class="splitter"></div>
+
+        <input type="checkbox" id="desaturate" />
+        <label class="pad-10 switch" for="desaturate">§viewAdjustBNW§<span></span></label>
+        <input type="checkbox" id="invert" />
+        <label class="pad-16 switch" for="invert">§invert§<span></span></label>
+
+        <div class="splitter"></div>
+
+        <div>
+            <input type="checkbox" class="tg" name="color" id="color">
+            <label class="hl" for="color">§color§ <span class="arrow"></span></label>
+            
+            <div class="toggle">
+                <div id="vibrance" class="range-box pad-20"></div>
+                <div id="saturation" class="range-box"></div>
+                <div id="temperature" class="range-box"></div>
+                <div id="tint" class="range-box"></div>
+                <div id="hue" class="range-box"></div>
+            </div>
+        </div>
+
+        <div class="splitter"></div>
+
+        <div>
+            <input type="checkbox" class="tg" name="light" id="light">
+            <label class="hl" for="light">§viewAdjustLight§ <span class="arrow"></span></label>
+            
+            <div class="toggle">
+                <div id="brightness" class="range-box pad-20"></div>            
+                <div id="exposure" class="range-box"></div>
+                <div id="contrast" class="range-box"></div>
+                <div id="black" class="range-box"></div>
+                <div id="white" class="range-box"></div>
+                <div id="highlight" class="range-box"></div>
+                <div id="shadows" class="range-box"></div>
+            </div>
+        </div>
+
+        <div class="splitter"></div>
+
+        <div>
+            <input type="checkbox" class="tg" checked="true" name="toning" id="toning">
+            <label class="hl" for="toning">§viewAdjustToning§ <span class="arrow"></span></label>
+
+            <div class="toggle">
+                <div id="toning-amount" class="range-box pad-20"></div>
+
+                <label class="pad-8">§viewAdjustHightlight§</label>
+                <div id="toning-highlights" class="color-picker"></div>
+
+                <label class="pad-10">§viewAdjustShadows§</label>
+                <div id="toning-shadows" class="color-picker"></div>
+
+            </div>
+        </div>
+
+        <div class="splitter"></div>
+
+        <div>
+            <input type="checkbox" class="tg" checked="true" name="fill" id="fill">
+            <label class="hl" for="fill">§fill§ <span class="arrow"></span></label>
+
+            <div class="toggle">
+                <div id="fill-amount" class="range-box pad-20"></div>
+
+                <label class="pad-8">§color§</label>
+                <div id="fill-color" class="color-picker"></div>
+
+                <label class="pad-12">§blendMode§</label>
+                <div class="select">
+                    <select id="fill-blend">
+                        <option value="">None</option>
+                        <option value="screen">Screen</option>
+                        <option value="overlay">Overlay</option>
+                        <option value="multiply">Multiply</option>
+                        <option value="color-dodge">Color-dodge</option>
+                        <option value="color-burn">Color-burn</option>
+                        <option value="hard-light">Hard-light</option>
+                        <option value="soft-light">Soft-light</option>
+                        <option value="vivid-light">Vivid-light</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="splitter"></div>
+
+        <div>
+            <input type="checkbox" class="tg" checked="true" name="curves" id="curves">
+            <label class="hl" for="curves">§viewAdjustCurves§ <span class="arrow"></span></label>
+            <div class="toggle">
+                <label class="pad-20">§viewAdjustChannel§</label>
+                <div id="curves-swatches">
+                    <div class="active" data-name="all"><span style="background-color: #ccc"></span></div>
+                    <div data-name="red"><span style="background-color: #d1480e;"></span></div>
+                    <div data-name="green"><span style="background-color:#929C1F;"></span></div>
+                    <div data-name="blue"><span style="background-color: #3a6e9a"></span></div>
+                </div>
+                <div id="curves-overlay">
+                    <canvas id="curves-grid" unselectable="on" width="200" height="200"></canvas>
+                    <canvas class="curves-graph active" unselectable="on" id="curves-graph-all"></canvas>
+                    <canvas class="curves-graph" unselectable="on" id="curves-graph-red"></canvas>
+                    <canvas class="curves-graph" unselectable="on" id="curves-graph-green"></canvas>
+                    <canvas class="curves-graph" unselectable="on" id="curves-graph-blue"></canvas>
+                </div>
+                <span class="tip"><small><img src="/img/icon/tip-bulb.svg" class="tip-icon"/>§viewAdjustTip§</small></span>
+            </div>
+        </div>
+
+        <div class="pad-20"></div>
+
+    </section>
+
+
+</div>
+
+<div class="bottom">
+    <a class="button does negative" id="adjust-cancel">§cancel§</a><a class="button does positive" id="adjust-apply">§apply§</a>
+</div>

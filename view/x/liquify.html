@@ -1,0 +1,33 @@
+
+<div class="title">§viewLiquifyTitle§<img src="/img/icon/close.svg" id="liquify-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="liquify-content" class="content">
+
+    <section id="liquify-no-layer" style="display: none">
+        <span class="tip pad-20"><img src="/img/icon/tip-lock.svg" class="tip-icon"/>§viewLiquifyLocked§</span>
+    </section>
+
+    <section id="liquify-sub-tools">
+
+        <label class="pad-20">§tool§</label>
+        <div class="switch-icon-field stretch">
+            <input type="radio" id="liquify-mode-move" name="liquify-mode" value="MOVE" checked/><label for="liquify-mode-move" tooltip="§viewLiquifyMove§" flow="up"><img src="/img/icon/liquify-push.svg" /></label>
+            <input type="radio" id="liquify-mode-grow" name="liquify-mode" value="GROW" /><label for="liquify-mode-grow" tooltip="§viewLiquifyGrow§" flow="up"><img src="/img/icon/liquify-grow.svg"/></label>
+            <input type="radio" id="liquify-mode-shrink" name="liquify-mode" value="SHRINK" /><label for="liquify-mode-shrink" tooltip="§viewLiquifyShrink§" flow="up"><img src="/img/icon/liquify-shrink.svg"/></label>
+        </div>
+        <div class="switch-icon-field stretch">
+            <input type="radio" id="liquify-mode-swirl-cw" name="liquify-mode" value="SWIRL-CW" /><label for="liquify-mode-swirl-cw" tooltip="§viewLiquifySwirlCW§" flow="up"><img src="/img/icon/liquify-swirl-right.svg"/></label>
+            <input type="radio" id="liquify-mode-swirl-ccw" name="liquify-mode" value="SWIRL-CCW" /><label for="liquify-mode-swirl-ccw" tooltip="§viewLiquifySwirlCCW§" flow="up"><img src="/img/icon/liquify-swirl-left.svg"/></label>
+            <input type="radio" id="liquify-mode-restore" name="liquify-mode" value="ERASE" /><label for="liquify-mode-restore" tooltip="§viewLiquifyErase§" flow="up"><img src="/img/icon/liquify-restore.svg" /></label>
+        </div>
+
+        <div class="splitter"></div>
+
+        <div id="liquify-brush-size" class="range-box pad-20"></div>
+        <div id="liquify-brush-strength" class="range-box"></div>
+        <div id="liquify-brush-density" class="range-box"></div>
+    </section>
+</div>  
+<div class="bottom">
+    <a class="button negative" id="liquify-cancel">§close§</a>
+</div>

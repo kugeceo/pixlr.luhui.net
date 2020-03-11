@@ -1,0 +1,133 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="shortcut icon" href="/images/pixlr-logo3-grey-16x16.ico">
+<link rel="icon" href="/images/pixlr-logo3-grey-16x16.ico">
+
+<link rel="stylesheet" type="text/css" href="/css/home-pixlr-new.min.css?v=05022020">
+<link rel="stylesheet" type="text/css" href="/css/index-new.min.css?v=05022020">
+<link rel="stylesheet" type="text/css" href="/css/mobile_view.min.css?v=05022020">
+<link rel="stylesheet" type="text/css" href="/css/twentytwenty.min.css?v=05022020">
+
+<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+
+<script src="/js/jquery.3.2.1.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.3.3.7.min.js"></script>
+<script type="text/javascript" src="/js/jquery.event.move.js"></script>
+<script type="text/javascript" src="/js/jquery.twentytwenty.js"></script>
+<script type="text/javascript" src="/js/bs-stepper.min.js"></script>
+
+<style>
+nav {
+    display: none;
+}
+</style>
+<!-- Google Tag Manager -->
+<script>
+//<![CDATA[
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+    {'gtm.start': new Date().getTime(),event:'gtm.js'}
+    );var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M4LP88G');
+  //]]>
+</script>
+<style>
+    @media screen and (max-width: 921px) {
+        .nav-bg {
+            background-color: transparent;
+        }
+    }
+</style>
+</head>
+<body>
+    <header class="header">
+        <div class="overlay" id="overlay">
+            <nav class="overlay-menu" style="width: 100%;">
+                <div class="logo" style="padding: 23px 0px;">
+                    <a href="/" title="pixlr home" aria-label="pixlr home">
+                        <img id="pixlr-logo" src="/images/pixlr-logo-201812-white-326x80.png" alt="pixlr logo" />
+                    </a>
+                </div>
+                <ul>
+                    
+                        <li><a href="/login>" title="login" aria-label="login">login</a></li>
+                    
+                    
+                </ul>
+                <div class="social-icon">
+                    <a href="https://www.facebook.com/pixlr" title="pixlr facebook" rel="nofollow"
+                        aria-label="pixlr facebook" target="_blank" rel="noopener">
+                        <img src="/images/FB_white@2x.png" class="image-data" alt="pixlr facebook" /></a>
+                    <a href="https://instagram.com/pixlr" title="pixlr instagram" rel="nofollow"
+                        aria-label="pixlr instagram" target="_blank" rel="noopener">
+                        <img src="/images/IG_white@2x.png" class="image-data" alt="pixlr instagram" /></a>
+                    <a href="https://www.twitter.com/pixlr/" title="pixlr twitter" rel="nofollow"
+                        aria-label="pixlr twitter" target="_blank" rel="noopener"><img src="/images/TWITTER_white@2x.png"
+                            class="image-data" alt="pixlr twitter" /></a>
+                </div>
+            </nav>
+        </div>
+        <div class="has-padding nav-bg">
+          <div class="header-flex">
+                <div class="logo">
+                    <a href="/" title="pixlr home" aria-label="pixlr home">
+                        <img id="pixlr-logo" src="/images/pixlr-logo-201812-white-326x80.png" alt="pixlr logo" />
+                    </a>
+                </div>
+                <nav>
+                    <div class="button_container" id="toggle">
+                        <span class="top"></span><span class="middle"></span><span class="bottom"></span>
+                    </div>
+                    <ul class="menu_full">
+                        
+                        <div class="mainnav pull-right">
+                            <ul>
+                                <li class="login-button">
+
+                                    
+                                        <a href="/login" class="button-inmaginesso">
+                                    
+                                        <span class="text-button">
+                                            <span class="text-bold" style="padding:25px">LOGIN</span>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <script>
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(window).width() > 921) {
+                if ($(document).scrollTop() > $(window).height() * 0) {
+                    $(".nav-bg").css("background-color", "rgb(38, 64, 89)");
+                } else {
+                    $(".nav-bg").css("background-color", "rgba(38, 64, 89, 0.3)");
+                }
+            } else {
+                $(".nav-bg").css("background-color", "transparent");
+            }
+        });
+        if ($(window).width() <= 921) {
+            $(".nav-bg").css("background-color", "transparent");
+        }
+    });
+    </script>
+
+    <section class="page-not-found">
+        <img src="/images/error-image.png" alt="page not found logo" />
+        <h4 style="margin-bottom: 30px;">We can't seem to find the page you're looking for.</h4>
+        <a href="/">RETURN TO HOME</a>
+    </section>

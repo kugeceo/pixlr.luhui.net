@@ -1,0 +1,739 @@
+
+<html>
+<head>
+<title>Online Photo Editor | Pixlr Editor</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<meta content="Pixlr Editor is a robust browser photo editor, for all your editing needs. Have full control over your images, including layers and effects." name="Description">
+<meta content="photo, photograph, picture, free, opacity, alpha, edit, editing, adjustments, online, flickr, facebook, photobucket, camera, digital, image, red-eye, fix, photoshop, gimp, photoshop" name="Keywords">
+<link href="/images/pixlr-logo3-grey-16x16.ico" rel="shortcut icon">
+<link href="/images/pixlr-logo3-grey-16x16.ico" rel="icon">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<script>
+  //<![CDATA[
+    if (top != self) {
+      if (false) {
+        // v 1.0
+        top.location.replace(document.location);
+      }
+    }
+  //]]>
+</script>
+
+
+<style>
+  /*<![CDATA[*/
+    body { margin:0px; padding:0px; background: #fff; overflow: hidden; height: 100%; min-height: 768px; position: relative; }
+    
+    #noflash {
+      padding-top:30px;
+      margin:0 auto;
+      width:600px;
+    }
+    
+    #flash {
+      float: left;
+      width: 100%;
+      height: 100%;
+    }
+    
+    .ad-wrap {
+        position: absolute;
+        display: block;
+        top: 0;
+        right: 0;
+        width: 325px;
+        height: 100%;
+        background: #444444;
+      }
+    
+    .adslot {
+      margin-bottom: 20px;
+    }
+    
+    @media only screen and (max-width: 1023px) {
+      body { padding-right: 0px !important; }
+      .ad-wrap { display: none; }
+      .adslot { display: none; }
+    }
+    
+    @media only screen and (max-height: 890px) {
+      .ad-wrap .adslot:last-child {
+        display: none;
+      }
+      .sstk_widget{
+        display: none;
+      }
+    }
+    
+    @media only screen and (max-height: 800px) {
+      .bodysplash {
+        overflow: auto !important;
+      }
+    }
+  /*]]>*/
+</style>
+
+<script data-cfasync="false" type="text/javascript">
+  var freestar = freestar || {};
+  freestar.hitTime = Date.now();
+  freestar.queue = freestar.queue || [];
+  freestar.config = freestar.config || {};
+  freestar.debug = window.location.search.indexOf('fsdebug') === -1 ? false : true;
+
+  // Tag IDs set here, must match Tags served in the Body for proper setup
+  freestar.config.enabled_slots = [
+    "Pixlr_300x250_top",
+    "Pixlr_300x250_mid",
+    "Pixlr_300x250_bottom"
+  ];
+
+  !function(a,b){var c=b.getElementsByTagName("script")[0],d=b.createElement("script"),e="https://a.pub.network/pixlr-com";e+=freestar.debug?"/qa/pubfig.min.js":"/pubfig.min.js",d.async=!0,d.src=e,c.parentNode.insertBefore(d,c)}(window,document);
+
+  // auto-refresher
+  var tool_arr = ["save", "open_image", "open_image_from", "new_image"];
+  var refresh_lock = true;
+  var refresh_timeout;
+
+  function initRefreshTimeout() {
+      refresh_lock = true;
+      if(refresh_timeout){ window.clearTimeout(refresh_timeout); }
+      refresh_timeout = window.setTimeout(function(){
+          refresh_lock = false;
+      }, 10000);
+  }
+
+  function editorActionLog(action, preX, preY, mX, mY){
+      if(refresh_lock==false && tool_arr.indexOf(action)!=-1){
+          initRefreshTimeout();
+          freestar.freestarReloadAllAdSlots();
+      }
+  }
+
+  initRefreshTimeout();
+</script>
+</head>
+<body class="bodysplash">
+<!-- flash-sunset -->
+<style>
+    #overlay-bg {
+        display: none;
+        width: 100%;height: 100%;position: fixed;top: 0;left: 0;background-color: #000;opacity: 0.6;z-index: 999998;
+    }
+    #flash-sunset-wrapper {
+        display: none;
+        position: absolute;top: 0;left: 0;right: 0;bottom: 0;margin: auto;max-width: 500px;height: 260px;padding: 50px;background-color: #fff;border-radius: 10px;z-index: 999999;
+    }
+    #flash-sunset-img {
+        position: absolute;top: -55px;left: -165px;background:url('/images/flash-sunset-cloud.png') no-repeat;width:284px;height:193px;
+    }
+    #flash-sunset-close {
+        position: absolute;top: 20px;right: 20px;background:url('/images/flash-sunset-close.svg') no-repeat;width:15px;height:15px;cursor: pointer;
+    }
+    #flash-sunset-content-wrapper {
+        margin-top:20px;
+    }
+    #flash-sunset-wrapper .title {
+        font-family: Nexa;font-size: 20px;color: #000000;font-weight: bold;margin-bottom:20px;
+    }
+    #flash-sunset-wrapper .splitter {
+        width:30px;height:1px;border-bottom:1px solid #000000;margin-bottom:20px;
+    }
+    #flash-sunset-wrapper .contents {
+        font-family: Nexa;font-size: 18px;color: #000000;line-height: 26px;
+    }
+    #flash-sunset-wrapper .buttons-wrapper {
+        margin:20px 0;
+    }
+    #flash-sunset-wrapper button {
+        float:left;max-width: 300px;height: 40px;font-size: 14px;line-height: 38px;text-align: center;display: block;color: #fff;padding: 0px 20px;margin:0 10px 10px 0;letter-spacing: 1px;background-color: #3B556F;border: #3B556F solid 2px;font-family: 'novecento_sans_widemedium';cursor: pointer;transition: background-color .1s linear;border-radius: 26px;
+    }
+    #flash-sunset-wrapper button:hover {
+        color: #3B556F !important;
+        background-color: #fff !important;
+    }
+    .clear {
+        clear: both;
+    }
+    @media only screen and (max-width: 800px) {
+      #flash-sunset-img {
+        top: -80px !important;
+        right: 0 !important;
+        left: 0 !important;
+        margin: auto;
+      }
+      #flash-sunset-wrapper {
+        top: 130px !important;
+        height: 400px !important;
+      }
+      #flash-sunset-content-wrapper {
+        margin-top: 50px !important;
+      }
+    }
+</style>
+<div id="overlay-bg"></div>
+<div id="flash-sunset-wrapper">
+    <div id="flash-sunset-img"></div>
+    <div id="flash-sunset-close"></div>
+    <div id="flash-sunset-content-wrapper">
+        <div class="title">Announcement</div>
+        <div class="splitter"></div>
+        <div class="contents">Adobe Flash Player will no longer be supported by worldwide browsers soon. Thus, <b>Pixlr Editor</b>, which runs on Adobe Flash Player, will be phased out and replaced by the all-new smarter and faster <b>PIXLR X</b>.</div>
+        <div class="buttons-wrapper">
+            <a href="/x"><button id="flash-sunset-try-pixlrx">TRY PIXLR X NOW</button></a>
+            <button id="flash-sunset-continue">CONTINUE WITH EDITOR</button>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function closeSunsetPopup() {
+            document.getElementById("overlay-bg").style.display = 'none';
+            document.getElementById("flash-sunset-wrapper").style.display = 'none';
+        }
+        document.getElementById('overlay-bg').addEventListener('click', function() {
+            closeSunsetPopup();
+        });
+        document.getElementById('flash-sunset-continue').addEventListener('click', function() {
+            closeSunsetPopup();
+        });
+        document.getElementById('flash-sunset-close').addEventListener('click', function() {
+            closeSunsetPopup();
+        });
+    });
+</script>
+<!-- exit flash-sunset -->
+<div class="flash-app" id="flash">
+<noscript>
+Pixlr editor requires javascript.
+</noscript>
+<script>
+  //<![CDATA[
+    var exitprompt = getParameterByName('exitprompt') || 'on';
+    var version = 0;
+    if (navigator.plugins != null && navigator.plugins.length > 0 && navigator.plugins["Shockwave Flash"]) {
+      version = navigator.plugins["Shockwave Flash"].description.split(" ")[2].split(".")[0];
+    } else {
+      try {
+        var axo = new ActiveXObject("ShockwaveFlash.ShockwaveFlash.7");
+        version = axo.GetVariable("$version").split(" ")[1].split(",")[0];
+      } catch (e) {}
+    }
+    if(version >= 10) {
+      RunContent('width','100%','height','100%','src','http://pixlr.com/editor/editor-7.1.21b.swf?name=&email=&loc=en',
+      'movie','http://pixlr.com/editor/editor-7.1.21b.swf?name=&email=&loc=en&country=','quality','high','wmode',
+      'window','devicefont','false','id','editor','bgcolor','#606060',
+      'name','editor','menu','false','allowFullScreen', 'true','allowScriptAccess','always','allowFullScreenInteractive','true');
+    } else {
+      //document.write("<div id='noflash'>You need Flash player 10 or better to be able to use Pixlr Editor - <a href='https://get.adobe.com/flashplayer'>Get Flash Player</a></div>");
+    }
+    function getParameterByName(name, url) {
+      if (!url) url = window.location.href;
+      name = name.replace(/[\[\]]/g, "\\$&");
+      var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+      results = regex.exec(url);
+      if (!results) return null;
+      if (!results[2]) return '';
+      return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+    function Generateobj(objAttrs,params,embedAttrs) {
+      var isIE = (navigator.appVersion.indexOf("MSIE") != -1)?true : false;
+      var isWin = (navigator.appVersion.toLowerCase().indexOf( "win" ) != -1 )?true : false;
+      var isOpera = ( navigator.userAgent.indexOf( "Opera" ) != -1 )?true : false;
+      var str='';
+      if( isIE&&isWin&&!isOpera ) {
+        str+='<object ';
+        for( var i in objAttrs ) {
+          str += i + '="'+objAttrs[i]+'" ';
+        }
+        str+='>';
+        for( var i in params ) {
+          str+='<param name="'+i+'" value="'+params[i]+'"/>';
+        }
+        str+='</object>';}else{str+='<embed ';
+        for( var i in embedAttrs ) {
+          str+=i+'="'+embedAttrs[i]+'" ';
+        }
+        str+=' />';
+      }
+      document.write(str);
+    }
+    function RunContent() {
+      var ret=GetArgs(arguments,"movie","clsid:d27cdb6e-ae6d-11cf-96b8-444553540000","application/x-shockwave-flash");
+      Generateobj( ret.objAttrs,ret.params,ret.embedAttrs );
+    }
+    function GetArgs( args,srcParamName,classid,mimeType ) {
+      var ret=new Object();
+      ret.embedAttrs=new Object();
+      ret.params=new Object();
+      ret.objAttrs=new Object();
+      for( var i = 0; i < args.length; i=i+2 ) {
+        var currArg=args[i].toLowerCase();
+        switch(currArg) {
+          case "src":
+          case "movie":
+            ret.embedAttrs["src"]=args[i+1];
+            ret.params[srcParamName] = args[i+1];
+          break;
+          case "id":
+            ret.objAttrs[args[i]] = args[i+1];
+          break;
+          case "width":
+          case "height":
+          case "name":
+          case "tabindex":
+            ret.embedAttrs[args[i]] = ret.objAttrs[args[i]] = args[i+1];
+          break;
+          default:
+            ret.embedAttrs[args[i]] = ret.params[args[i]] = args[i+1];
+      }
+    }
+    ret.objAttrs["classid"] = classid;
+    if(mimeType)ret.embedAttrs["type"] = mimeType;
+      return ret;
+    }
+  //]]>
+</script>
+
+<script>
+  //<![CDATA[
+    function CallBack(b,a){document.getElementById("editor")[b](a)}
+    function Auth(a){({facebook:function(){var c="https://graph.facebook.com/oauth/authorize?client_id=126974090689377&redirect_uri=http://pixlr.com/facebook/auth&scope=publish_stream,user_photos,offline_access&display=popup",b=window.open(c,"auth_window","location=0,status=0,scrollbars=0,titlebar=0,resizable=0,menubar=0,directories=0,width=600,height=400")},flickr:function(){var c="https://flickr.com/services/auth/?api_key=3c39be9d9b0b84b80e1852a38ec9179a&perms=delete&api_sig=a75262d1a6b7cb27a9daf8db8813d4cb",b=window.open(c,"auth_window","location=0,status=0,scrollbars=0,titlebar=0,resizable=0,menubar=0,directories=0,width=880,height=600")},picasa:function(){var c="https://www.google.com/accounts/AuthSubRequest?scope=https%3A%2F%2Fpicasaweb.google.com%2Fdata%2F&session=1&secure=0&next=http://pixlr.com/picasa/auth",b=window.open(c,"auth_window","location=0,status=0,scrollbars=0,titlebar=0,resizable=0,menubar=0,directories=0,width=800,height=600")}})[a]()};
+    function Clipboard(){var m=document.getElementById("mole"),obj=frame(m).getElementById("clipboard");if(obj==null){m.src="clipboard.htm";}else{CallBack("clipboard",obj.GetClipboardImage());}}
+    function frame(iframe){return(iframe.contentDocument||iframe.contentWindow.document||iframe.document);}
+    function Login(a){({google:function(){window.open("/openid/auth","login_window","location=0,status=0,scrollbars=0,titlebar=0,resizable=0,menubar=0,directories=0,width=600,height=400"); }})[a]()}
+  //]]>
+</script>
+
+<iframe frameborder="0" height="10" id="mole" style="position: absolute; z-index: 4; left: -50px" width="10"></iframe>
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    function buildUrl(base, args) {
+      if (!args) return base;
+      var res = [];
+      for (var key in args) {
+        if (args.hasOwnProperty(key)) {
+          res.push(key + '=' + encodeURI(args[key]));
+        }
+      }
+      return base + '?' + res.join('&');
+    }
+    function share(url, name, desc, service) {
+      if (service === "twitter") {
+        var u = buildUrl("https://twitter.com/intent/tweet", {
+          via: "pixlr",
+          text: desc
+        });
+        window.open(u, "pop", "scrollbars=0, titlebar=0, status=0, menubar=0, width=550, height=430");
+      } else {
+        var u = buildUrl("/fb_presave_expr/", {
+          url: url,
+          desc: desc
+        });
+        window.open(u, "pop", "scrollbars=0,titlebar=0,status=0,menubar=0,width=600,height=400");
+      }
+    }
+    function viewportSize() {
+      var test = document.createElement( "div" );
+      test.style.cssText = "position: fixed;top: 0;left: 0;bottom: 0;right: 0;";
+      document.documentElement.insertBefore( test, document.documentElement.firstChild );
+      var dims = { width: test.offsetWidth, height: test.offsetHeight };
+      document.documentElement.removeChild( test );
+      return dims;
+    }
+    window.onload=function() {
+      var flash = document.getElementById("flash");
+      var viewport = viewportSize();
+      flash.style.height=viewport.height + "px";
+    }
+    var adVisible = false;
+    window.onresize=function() {
+      var viewport = viewportSize();
+      document.getElementById("flash").style.height=viewport.height + "px";
+      if( adVisible == false && viewport.width > 1023 ){
+        injectAds(viewport);
+      }
+    }
+    // Injects add's into Ad Slots (div's) if screensize is 1024px or higher.
+    function injectAds() {
+    }
+  //]]>
+</script>
+<!-- / Warning on close (JavaScript) -->
+<style type="text/css">
+    body { padding-right: 325px }
+    .ad-wrap { background-color: #444 !important; }
+    .pro-appslot { margin: 10px 0; padding-left:10px; }
+</style>
+<div class="ad-wrap">
+	<div class="pro-appslot">
+	    <!-- Tag ID: Pixlr_300x250_top -->
+		<div align="center" id="Pixlr_300x250_top" data-refresh-time="-1">
+		<script data-cfasync="false" type="text/javascript">
+		    freestar.queue.push(function () { googletag.display('Pixlr_300x250_top'); });
+		</script>
+		</div>
+	</div>
+	<div class="pro-appslot">
+		<!-- Tag ID: Pixlr_300x250_mid -->
+		<div align="center" id="Pixlr_300x250_mid" data-refresh-time="-1">
+		<script data-cfasync="false" type="text/javascript">
+		    freestar.queue.push(function () { googletag.display('Pixlr_300x250_mid'); });
+		</script>
+		</div>
+	</div>
+	<div class="pro-appslot">
+		<!-- Tag ID: Pixlr_300x250_bottom -->
+		<div align="center" id="Pixlr_300x250_bottom" data-refresh-time="-1">
+		<script data-cfasync="false" type="text/javascript">
+		    freestar.queue.push(function () { googletag.display('Pixlr_300x250_bottom'); });
+		</script>
+		</div>
+	</div>
+</div>
+<div id="wrapfabber" style="position:absolute;bottom:0;right:0;"><div class="adBanner" style="background-color:transparent;height:1px;width:1px;"></div></div>
+<script type="text/javascript">
+var showImageAdBlocker = 0;
+
+function cancelAdBlocker() {
+    document.getElementById("wrapperBlocker").remove();
+}
+
+function showImage() {
+    if (showImageAdBlocker == 0) {
+        document.getElementById("imageGuide").style.display = 'block';
+        document.getElementById("wrapperBlockerStep1").style.display = 'none';
+        document.getElementById("wrapperBlockerStep2").style.display = 'block';
+        showImageAdBlocker = 1;
+    } else {
+        window.location.reload();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if(document.getElementById("wrapfabber").clientHeight <= 0){
+        // dataLayer.push({ "event": "misc", "pageType": "adblocker" });
+        var body = document.body;
+        var wrapperNoFlash = '<div id="wrapperBlocker" style="width:100%;height:100%;position: absolute;top: 0;font-family: Lato,sans-serif;overflow:auto;">\
+            <div style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;background: #000;z-index: 999;opacity: 0.8;"></div>\
+            <div id="wrapperBlockerStep1" style="-webkit-box-sizing: border-box;box-sizing: border-box;width: 500px;margin: 0 auto;text-align: center;z-index: 9999;background-color: #fff;padding: 30px;position: relative;margin-top: 78px;margin-bottom: 78px;border-radius: 10px;color: #000;padding-bottom: 40px;">\
+                <img src="/images/eye_icon.png" />\
+                <h2 style="margin:0;padding:0;line-height: 50px;">Ad-blocker Detected</h2>\
+                <p style="margin:0;font-size: 16px;line-height: 35px;">Hi Human! We\'ve detected that you are using an ad-blocker.</p>\
+                <p style="margin:0;font-size: 16px;line-height: 35px;">Pixlr has remained free for so long due to the revenue from ads.</p>\
+                <p style="margin:0;font-size: 16px;line-height: 35px;margin-bottom: 35px;">Please help us keep Pixlr free-to-use ^_^</p>\
+                <span ga-on="click" ga-event-action="click" ga-event-category="adblocker" ga-event-label="step1Cancel" onclick="cancelAdBlocker();" style="cursor: pointer;text-transform: uppercase;padding: 13px;color: #000;margin-right: 20px;" href="javascript:void(0)">Cancel</span>\
+                <span ga-on="click" ga-event-action="click" ga-event-category="adblocker" ga-event-label="step1Yes" onclick="showImage()" style="cursor: pointer;text-transform: uppercase;padding: 13px;color: #000;background: #00fff2;border-radius: 4px;margin-left: 20px;" href="javascript:void(0)">Yes, I\'ll whitelist Pixlr.com</span>\
+            </div>\
+            <div id="wrapperBlockerStep2" style="display:none;-webkit-box-sizing: border-box;box-sizing: border-box;width: 650px;margin: 0 auto;z-index: 9999;background-color: #fff;padding: 30px;position: relative;margin-top: 78px;margin-bottom: 78px;border-radius: 10px;color: #000;padding-bottom: 40px;">\
+                <h2 style="margin:0;padding:0;line-height: 50px;text-align: center;">How-to Whitelist</h2>\
+                <p style="margin:0;font-size: 16px;line-height: 35px;margin-bottom: 5px;">Click on your ad-blocker extension to reveal the dropdown menu.</p>\
+                <p style="margin:0;font-size: 16px;line-height: 25px;">For AdBlock: Select \'Don\'t run on pages on this domain\' to disable ad-blocker on Pixlr</p>\
+                <p style="margin:0;font-size: 16px;line-height: 25px;">For Adblock Plus: Click on \'Enabled on this site\' to disable ad-blocker on Pixlr</p>\
+                <p style="margin:0;font-size: 16px;line-height: 35px;margin-bottom: 35px;margin-top: 5px;">That\'s all. Once you have whitelisted Pixlr, click on \'Done\' to proceed normally!</p>\
+                <img id="imageGuide" style="margin: 0 auto;margin-bottom: 35px;margin-top: -15px;" src="/images/pixlr-ad-block-screenshot.jpg" />\
+                <div style="text-align: center;"><span ga-on="click" ga-event-action="click" ga-event-category="adblocker" ga-event-label="step2Yes" onclick="showImage()" style="cursor: pointer;text-transform: uppercase;padding: 13px;color: #000;background: #00fff2;border-radius: 4px;margin-left: 20px;" href="javascript:void(0)">Done! ^_^</span></div>\
+            </div>\
+        </div>';
+        body.insertAdjacentHTML('beforeend', wrapperNoFlash);
+    }
+});
+</script>
+<!-- / Google analytics -->
+<!-- / Google Analytics JS -->
+<script>
+  //<![CDATA[
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  //]]>
+</script>
+<script>
+  //<![CDATA[
+    var pageTracker = _gat._getTracker("UA-1830856-4");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  //]]>
+</script>
+
+<!-- / Segment -->
+<script type="text/javascript">
+  (function(){
+
+    // Create a queue, but don't obliterate an existing one!
+    var analytics = window.analytics = window.analytics || [];
+
+    // If the real analytics.js is already on the page return.
+    if (analytics.initialize) return;
+
+    // If the snippet was invoked already show an error.
+    if (analytics.invoked) {
+      if (window.console && console.error) {
+        console.error('Segment snippet included twice.');
+      }
+      return;
+    }
+
+    // Invoked flag, to make sure the snippet
+    // is never invoked twice.
+    analytics.invoked = true;
+
+    // A list of the methods in Analytics.js to stub.
+    analytics.methods = [
+      'trackSubmit',
+      'trackClick',
+      'trackLink',
+      'trackForm',
+      'pageview',
+      'identify',
+      'group',
+      'track',
+      'ready',
+      'alias',
+      'page',
+      'once',
+      'off',
+      'on'
+    ];
+
+    // Define a factory to create stubs. These are placeholders
+    // for methods in Analytics.js so that you never have to wait
+    // for it to load to actually record data. The `method` is
+    // stored as the first argument, so we can replay the data.
+    analytics.factory = function(method){
+      return function(){
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(method);
+        analytics.push(args);
+        return analytics;
+      };
+    };
+
+    // For each of our methods, generate a queueing stub.
+    for (var i = 0; i < analytics.methods.length; i++) {
+      var key = analytics.methods[i];
+      analytics[key] = analytics.factory(key);
+    }
+
+    // Define a method to load Analytics.js from our CDN,
+    // and that will be sure to only ever load it once.
+    analytics.load = function(key){
+      // Create an async script element based on your key.
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.async = true;
+      script.src = ('https:' === document.location.protocol
+        ? 'https://' : 'http://')
+        + 'cdn.segment.com/analytics.js/v1/'
+        + key + '/analytics.min.js';
+
+      // Insert our script next to the first script element.
+      var first = document.getElementsByTagName('script')[0];
+      first.parentNode.insertBefore(script, first);
+    };
+
+    // Add a version to keep track of what's in the wild.
+    analytics.SNIPPET_VERSION = '3.0.1';
+
+    // Load Analytics.js with your key, which will automatically
+    // load the tools you've enabled for your account. Boosh!
+    analytics.load('BZhckyCx5JYsaUCucLeqashIWIWnVCLh');
+
+    // Make the first page call to load the integrations. If
+    // you'd like to manually name or tag the page, edit or
+    // move this call however you'd like.
+    analytics.page();
+
+  })();
+</script>
+
+<style type="text/css">
+    a:hover { background-color: initial!important;}
+</style>
+<script type="text/javascript">
+	function detectFlash(){
+		window.location.href='https://get.adobe.com/flashplayer';
+	}
+	document.addEventListener('DOMContentLoaded', function(){
+		var embFlash = document.getElementsByTagName('embed');
+		var body = document.body;
+		var appContent = document.getElementsByClassName("flash-app");
+		var adsContent = document.getElementsByClassName("pro-app-wrap");
+        if(embFlash.length <= 0){
+            noConfirm = 1;
+            // dataLayer.push({ "event": "misc", "pageType": "flashguide" });
+        	appContent[0].style.display="none";
+        	if(adsContent.length > 0){
+        		adsContent[0].style.display="none";
+        	}
+        	body.style.background = '#fff';
+        	body.style.overflow = 'auto';
+        	body.style.paddingRight = '0';
+        	var wrapperNoFlash = '<div style="width:100%;padding-top: 6%;" onclick="detectFlash()"><div id="wrapperNoFlash" style="padding: 10px;max-width: 580px;margin: 0 auto;text-align: center;font-family: Lato,sans-serif;">\
+					<img style="margin-bottom: 10px;" src="/images/noflash_icon_black.png" />\
+					<h2>Hi there,</h2>\
+					<p style="line-height: 25px;">You\'ll need Flash Player to run Pixlr Editor.</p>\
+					<p style="line-height: 25px;">To enable Flash, please click <strong><a style="color: #000;text-decoration: underline;" href="https://get.adobe.com/flashplayer">here</a></strong>.</p>\
+				</div></div>\
+                <div style="background:url(\'/images/noflash_bottom_images.jpg\') repeat-x;position:absolute;bottom:0px;margin:auto;width:100%;height:202px;"><div style="position:absolute;top:-200px;right:0;left:0;bottom:0;margin:auto;text-align:center;background-color:#fff;max-width:470px;height:220px;border-radius:10px;box-shadow: 0px 5px 20px -5px rgba(0,0,0,0.75);padding:30px;z-index:100;"><div style="font-family: Lato,sans-serif;font-size: 20px;color: #000000;font-weight: bold;margin-bottom:20px;">BETA OF PIXLR EDITOR 2020 IS HERE!</div><div style="font-family: Lato,sans-serif;font-size: 16px;line-height:20px;color: #000000;margin-bottom:30px;">Experience the simplicity of the next generation photo editor - for faster and better editing!</div><div><a href="/e" style="width: 250px;height: 40px;font-size: 14px;line-height: 38px;text-align: center;display: block;color: #fff;padding: 0px 20px;margin:10px auto;letter-spacing: 1px;background-color: #3B556F !important;border: #3B556F solid 2px;font-family: Lato,sans-serif;font-weight:bold;cursor: pointer;transition: background-color .1s linear;border-radius: 26px;text-decoration:none;">NEW EDITOR BETA</a></div><div><a href="https://get.adobe.com/flashplayer" style="width: 250px;height: 40px;font-size: 14px;line-height: 38px;text-align: center;display: block;color: #3B556F;padding: 0px 20px;margin:10px auto;letter-spacing: 1px;background-color: #ffffff !important;border: #3B556F solid 2px;font-family: Lato,sans-serif;font-weight:bold;cursor: pointer;transition: background-color .1s linear;border-radius: 26px;text-decoration:none;">CONTINUE WITH PIXLR EDITOR</a></div></div></div>';
+        	body.insertAdjacentHTML('beforeend',wrapperNoFlash);
+
+            var now = new Date();
+            var myDate = new Date(now.getTime() + 5*60*1000);
+            document.cookie = 'pixlrxprompt=1; expires='+myDate.toUTCString();
+        }
+        else if(!(document.cookie && document.cookie.indexOf('pixlrxprompt=1') != -1)){
+            document.body.classList.remove('bodysplash');
+
+            if(!(document.cookie && document.cookie.indexOf('newpixlrprompt=1') != -1)){
+                newPixlrPrompt();
+            }
+
+            window.addEventListener("beforeunload", function (e) {
+                if(exitprompt == 'on'){
+                    var confirmationMessage = "If you leave this page, all work will be lost!";
+                    (e || window.event).returnValue = confirmationMessage;
+                    return confirmationMessage;
+                }
+            });
+        }
+        else if(!(document.cookie && document.cookie.indexOf('newpixlrprompt=1') != -1)){
+            newPixlrPrompt();
+        }
+        else{
+            var now = new Date();
+            document.cookie = 'pixlrxprompt=1; expires='+now.toUTCString();
+            document.body.classList.remove('bodysplash');
+        }
+
+        function newPixlrPrompt() {
+            //popup for new pixlr editor prompt
+            var newPixlrPrompt = '<div id="newpixlr-bg" style="position:fixed;top: 0;bottom: 0;right: 0;left: 0;margin: auto;width: 100vw;height: 100vh;background: #000;opacity: 0.7;z-index: 10000;"></div><div id="newpixlr-content-wrapper" style="position: fixed; top: 0; bottom: 0; right: 0; left: 0; margin: auto; padding: 50px; z-index: 10001; width: 400px; height: 270px; border-radius: 16px; background: linear-gradient(344.93deg, #1095C4 0%, #00ACB9 100%); color:#fff; font-family: Lato,sans-serif;"> <div style="font-size:30px;margin-bottom: 17px;">We’re upgrading to<br>an even more powerful<br><span style="font-weight:bold;">PIXLR EDITOR!</span> </div><div style="font-size:14px;margin-bottom: 27px;">Coming soon to advance your photo editing skills to the next level. Expect more Wow features for speedier, and easier edits for maximized creativity. </div><div> <button id="newpixlr-btn-signup" style="float:left;background: #3B556F !important;color: #fff;cursor: pointer;padding: 16px;border: none;border-radius: 20px;text-decoration:none;width: 40%;margin-right: 5%;line-height: 12px;font-size: 14px;font-weight: bold;text-align: center;">NOTIFY ME</button> <button id="newpixlr-btn-cancel" style="float:left;cursor: pointer;color: #fff;padding: 16px;border: none;background: none;height: 46px;width: 40%;margin-right: 5%;line-height: 12px;font-size: 14px;text-align: center;text-decoration: underline;">No, thanks</button> </div></div>';
+            document.body.insertAdjacentHTML('beforeend', newPixlrPrompt);
+
+            document.addEventListener('click',function(e){
+                if(e.target && e.target.id== 'newpixlr-btn-signup'){
+                    window.open("http://luhui.net", "_blank");
+
+                    var myDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
+                    document.cookie = 'newpixlrprompt=1; expires='+myDate.toUTCString();
+
+                    exitNewPixlrPrompt();
+                }else if(e.target && e.target.id== 'newpixlr-btn-cancel'){
+                    var myDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1));
+                    document.cookie = 'newpixlrprompt=1; expires='+myDate.toUTCString();
+
+                    exitNewPixlrPrompt();
+                }
+
+                function exitNewPixlrPrompt() {
+                    var elem1 = document.querySelector('#newpixlr-bg');
+                    var elem2 = document.querySelector('#newpixlr-content-wrapper');
+                    elem1.parentNode.removeChild(elem1);
+                    elem2.parentNode.removeChild(elem2);
+                }
+            });
+        }
+    });
+</script>
+
+<!-- Quantcast Choice. Consent Manager Tag -->
+<script type="text/javascript" async=true>
+    var elem = document.createElement('script');
+    elem.src = 'https://quantcast.mgr.consensu.org/cmp.js';
+    elem.async = true;
+    elem.type = "text/javascript";
+    var scpt = document.getElementsByTagName('script')[0];
+    scpt.parentNode.insertBefore(elem, scpt);
+    (function() {
+    var gdprAppliesGlobally = false;
+    function addFrame() {
+        if (!window.frames['__cmpLocator']) {
+        if (document.body) {
+            var body = document.body,
+                iframe = document.createElement('iframe');
+            iframe.style = 'display:none';
+            iframe.name = '__cmpLocator';
+            body.appendChild(iframe);
+        } else {
+            // In the case where this stub is located in the head,
+            // this allows us to inject the iframe more quickly than
+            // relying on DOMContentLoaded or other events.
+            setTimeout(addFrame, 5);
+        }
+        }
+    }
+    addFrame();
+    function cmpMsgHandler(event) {
+        var msgIsString = typeof event.data === "string";
+        var json;
+        if(msgIsString) {
+        json = event.data.indexOf("__cmpCall") != -1 ? JSON.parse(event.data) : {};
+        } else {
+        json = event.data;
+        }
+        if (json.__cmpCall) {
+        var i = json.__cmpCall;
+        window.__cmp(i.command, i.parameter, function(retValue, success) {
+            var returnMsg = {"__cmpReturn": {
+            "returnValue": retValue,
+            "success": success,
+            "callId": i.callId
+            }};
+            event.source.postMessage(msgIsString ?
+            JSON.stringify(returnMsg) : returnMsg, '*');
+        });
+        }
+    }
+    window.__cmp = function (c) {
+        var b = arguments;
+        if (!b.length) {
+        return __cmp.a;
+        }
+        else if (b[0] === 'ping') {
+        b[2]({"gdprAppliesGlobally": gdprAppliesGlobally,
+            "cmpLoaded": false}, true);
+        } else if (c == '__cmp')
+        return false;
+        else {
+        if (typeof __cmp.a === 'undefined') {
+            __cmp.a = [];
+        }
+        __cmp.a.push([].slice.apply(b));
+        }
+    }
+    window.__cmp.gdprAppliesGlobally = gdprAppliesGlobally;
+    window.__cmp.msgHandler = cmpMsgHandler;
+    if (window.addEventListener) {
+        window.addEventListener('message', cmpMsgHandler, false);
+    }
+    else {
+        window.attachEvent('onmessage', cmpMsgHandler);
+    }
+    })();
+    window.__cmp('init', {
+            'Language': 'en',
+        'Initial Screen Reject Button Text': 'I do not accept',
+        'Initial Screen Accept Button Text': 'I accept',
+        'Purpose Screen Body Text': 'You can set your consent preferences and determine how you want your data to be used based on the purposes below. You may set your preferences for us independently from those of third-party partners. Each purpose has a description so that you know how we and partners use your data.',
+        'Vendor Screen Body Text': 'You can set consent preferences for each individual third-party company below. Expand each company list item to see what purposes they use data for to help make your choices. In some cases, companies may disclose that they use your data without asking for your consent, based on their legitimate interests. You can click on their privacy policies for more information and to opt out.',
+        'Vendor Screen Accept All Button Text': 'Accept all',
+        'Vendor Screen Reject All Button Text': 'Reject all',
+        'Initial Screen Body Text': 'We and our partners use technology such as cookies on our site to personalise content and ads, provide social media features, and analyse our traffic. Click below to consent to the use of this technology across the web. You can change your mind and change your consent choices at anytime by returning to this site.',
+        'Initial Screen Body Text Option': 1,
+        'Publisher Name': 'Pixlr',
+        'Publisher Logo': '/images/pixlr-logo-201812-white-326x80.png',
+        'Min Days Between UI Displays': 180,
+        'Publisher Purpose IDs': [5],
+    });
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag -->
+</div>
+</body>
+</html>

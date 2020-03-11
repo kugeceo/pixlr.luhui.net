@@ -1,0 +1,43 @@
+
+<div class="title"><span id="add-element-title">§addElement§</span><img src="/img/icon/close.svg" id="add-element-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="add-element-content" class="content">
+
+    <section>
+        <div id="element-settings">
+            <progress id="element-progress" value="0" max="100"></progress>
+            <img class="close" id="element-delete" src="/img/icon/close.svg" title="§viewAddElementDelete§">
+            <div class="range-white" id="element-settings-amount">
+                <label>§transparency§</label>
+                <input type="range" value="100" min="0" max="100" step="1" id="element-opacity" name="element_opacity" oninput="element_opacity_out.value=this.value" />
+                <output name="element_opacity_out" id="element_opacity_out" for="element_opacity">100</output>
+            </div>
+            <ul id="element-rotate-flip" class="small-icon-button-set">
+                <li id="element-rotate-left"><img src="/img/icon/rotate-left.svg" alt="§viewAddElementRL§"></li>
+                <li id="element-rotate-right"><img src="/img/icon/rotate-right.svg"  alt="§viewAddElementRR§"></li>
+                <li id="element-flip-horizontal"><img src="/img/icon/flip-horizontal.svg"  alt="§viewAddElementFlipH§"></li>
+                <li id="element-flip-vertical"><img src="/img/icon/flip-vertical.svg"  alt="§viewAddElementFlipV§"></li>
+            </ul>
+        </div>
+
+        <ul id="add-element-category-list" class="section-list">
+
+            <li data="overlay" id="add-element-overlay"><span>§viewAddElementOverlay§</span></li>
+            <li data="border" id="add-element-border"><span>§viewAddElementBorder§</span></li>
+            <li data="shape" id="add-element-shape"><span>§viewAddElementShape§</span></li>
+            <li data="sticker" id="add-element-sticker"><span>§viewAddElementSticker§</span></li>
+        </ul>
+
+        <div id="add-element-category" style="display:none;" >
+            
+            <a class="button small outline pad-10" id="add-element-back"><img src="/img/icon/back-small.svg" />§back§</a>
+            <div id="add-element-loading" class="pad-20" style="display:none;">§loading§ .. </div>
+            <div id="add-element-list" class="pad-20">
+
+            </div>
+        </div>
+    </section>
+</div>
+<div class="bottom">
+    <a class="button negative" id="add-element-cancel">§close§</a>
+</div>

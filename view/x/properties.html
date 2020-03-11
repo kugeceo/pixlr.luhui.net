@@ -1,0 +1,32 @@
+
+<div class="title">§viewPropertiesTitle§<img src="/img/icon/close.svg" id="properties-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="properties-content" class="content">
+
+    <section>
+
+        <a class="button outline pad-20" id="properties-resize-image"><img src="/img/icon/resize-image.svg">§viewPropertiesResizeImage§</a>
+        <a class="button outline pad-10" id="properties-resize-canvas"><img src="/img/icon/resize-canvas.svg">§viewPropertiesResizeCanvas§</a>
+
+        <label class="pad-20">§viewCropRotate§</label>
+        <ul id="properties-rotate" class="icon-button-set">
+            <li id="rotate-left" tooltip="§viewCropRL§" flow="up-right"><img src="/img/icon/rotate-left.svg" alt="§viewCropRL§"></li>
+            <li id="rotate-right" tooltip="§viewCropRR§" flow="up"><img src="/img/icon/rotate-right.svg"  alt="§viewCropRR§"></li>
+            <li id="flip-horizontal" tooltip="§viewCropFlipH§" flow="up"><img src="/img/icon/flip-horizontal.svg"  alt="§viewCropFlipH§"></li>
+            <li id="flip-vertical" tooltip="§viewCropFlipV§" flow="up-left"><img src="/img/icon/flip-vertical.svg"  alt="§viewCropFlipV§"></li>
+        </ul>
+
+        <div>
+            <input type="checkbox" id="properties-background">
+            <label class="switch pad-20" for="properties-background">§background§<span></span></label>
+            <div class="switch-content">
+                <div id="properties-background-color-picker" class="color-picker pad-0"></div>
+            </div>
+        </div>
+ 
+    </section>
+</div>
+
+<div class="bottom">
+    <a class="button negative" id="properties-cancel">§close§</a>
+</div>

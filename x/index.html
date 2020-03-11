@@ -1,0 +1,331 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Photo Editor : Pixlr X - free image editing online</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, maximum-scale=1" />
+        <meta name="description" content="Experience Pixlr editor X, the next generation photo editor! No installation and registration required. Use for free on desktop, tablets & phones." >
+
+        <meta property="og:site_name" content="Photo Editor : Pixlr.com - free image editing online"/>
+        <meta property="og:title" content="Photo Editor : Pixlr.com - free image editing online" />
+        <meta property="og:description" content="Experience Pixlr X, the next generation photo editor! No installation and registration required. Use for free on desktop, tablets & phones." />
+        <meta property="og:image" content="/images/best-photo-editor-cover.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="/x" />
+        
+        <link rel="shortcut icon" href="/images/pixlr-logo3-grey-16x16.ico">
+        <link rel="icon" href="/images/pixlr-logo3-grey-16x16.ico">
+
+        
+        <link rel="stylesheet" href="/dist/pixlrxstyle.9d346920a16cf9b736ef.css" type="text/css" charset="utf-8" />
+
+        
+<!-- 
+        <script type="text/javascript" src="//m.servedby-buysellads.com/monetization.js"></script>
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1830856-4"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date()); gtag('config', 'UA-1830856-4');
+        </script>
+         -->
+		 
+		 
+		 
+    </head>
+    <body>
+
+    <div id="workspace" style="display:none"></div>
+    <div id="home"><a id="toggle-editor" tooltip="Back to editor" flow="right"><img src="/img/icon/back.svg"/></a>
+
+<div id="home-top">
+        <div id="language-link" class="menu single">
+            <img src="/img/icon/language.svg">Language
+            <ul>
+                <li><a id="language-en-us" href="?lang=en-US">English<span>English</span></a></li>
+                
+                <li><a id="language-fr-fr">Français<span>French</span></a></li>
+                <li><a id="language-es-es">Español<span>Spanish</span></a></li>
+                <li><a id="language-pt-br">Português do Brasil<span>Brazilian</span></a></li>
+               
+                <li><a id="language-ja-jp" href="?lang=jp-JP">日本語<span>Japanese</span></a></li>
+            </ul>
+        </div>
+        <!-- add logic here if, send in res.locals.account.username //or smth like that, if it exists then display another thing not the user login button -->
+        
+            <div id="user-link"><img src="/img/icon/user.svg"><a href="/login?callback=/x"  style="text-decoration: none; color: rgba(255,255,255,0.7);">Login / Register</a></div>
+        
+</div>
+
+<div id="wrap">
+
+    <div id="menu-section">
+        
+        <div class="flatbox" style="padding:0px;">   
+            <a id="home-logo" href="/">pixlr x</a> 
+            <div class="splitter"></div>
+            <div class="content">
+                <ul id="home-menu" class="tab-menu">
+                    <li data="recent" class="selected" id="recent-tab">History</li>
+                    <li data="new" id="new-tab">Create new</li>
+                    <li data="template" id="template-tab">template</li>
+                    <li data="search" id="search-tab">Stock search</li>
+                </ul>
+                <div class="splitter small"></div>
+                
+                <a id="home-open-image" class="button positive pad-20" style="display:block;width:100%;">Open image</a>
+                <a id="home-open-url" class="button positive pad-16" style="display:block;width:100%;background:#4d515a !important">Load url</a>
+                
+                <small class="tip pad-16" style="display: block">
+                    You can also drag and drop files or paste from the clipboard to open.
+                </small>
+            </div>
+        </div>
+        
+        <div class="bsa-block">
+            <script async type="text/javascript" src="/js/carbon.js?serve=CE7D453L&placement=pixlrcom" id="_carbonads_js"></script>
+        </div>
+    </div>
+
+    <div id="home-section">
+
+        <div class="flatbox" id="home-box" style="min-height:400px;">
+
+            <div id="welcome" style="display: none;">
+
+                <h1>Welcome to the Pixlr X Online Photo Editor.</h1>
+                <p>There are no images in your history. Please "Open Image" or "Load Url" to start editing.</p>
+                <br/><br/>
+
+                <p>You may also begin editing with any of our images below.</p>
+
+            </div>
+
+            <div id="recent-content" style="display:none">
+                <div id="recent-pinned-divider" class="divider">
+                    <label>Pinned projects</label>
+                    <hr />
+                </div>
+                <div id="recent-pinned" style="display: none;"></div>
+                
+                <div id="recent-latest-divider" class="divider">
+                    <label>Last 10 projects</label>
+                    <hr />
+                </div>
+                <div id="recent-latest" style="display: none;min-height:60px;"></div>
+
+                <div id="recent-controls" style="display: none;">
+                    <div class="tip">TIP! If you want to keep a document then click the heart icon to pin it.</div>
+                    <div class="buttons">
+                        <a id="recent-clear" class="button negative">Clear history</a>
+                    </div>
+                </div>           
+            </div>
+            <div id="new-content" style="display:none">
+            
+                <div class="flex" id="holder-create-new">
+
+                    <div id="create-new-presets" style="flex-grow:2">
+
+                        <div data="800:600" class="image-box new-canvas">
+                            <div class="holder"><img src="/img/icon/new-canvas.svg" class="icon"></div>
+                            <span>Web small</span>
+                            <small>800x600</small>
+                        </div>
+                        <div data="1280:720" class="image-box new-canvas">
+                            <div class="holder"><img src="/img/icon/new-canvas.svg" class="icon"></div>
+                            <span>Web 720p</span>
+                            <small>1280x720</small>
+                        </div>
+                        <div data="1920:1080" class="image-box new-canvas selected">
+                            <div class="holder"><img src="/img/icon/new-canvas.svg" class="icon"></div>
+                            <span>Full HD</span>
+                            <small>1920x1080</small>
+                        </div>
+                        <div data="2560:1440" class="image-box new-canvas">
+                            <div class="holder"><img src="/img/icon/new-canvas.svg" class="icon"></div>
+                            <span>Web 1440p</span>
+                            <small>2560x1440</small>
+                        </div>
+                        <div data="3840:2160" class="image-box new-canvas">
+                            <div class="holder"><img src="/img/icon/new-canvas.svg" class="icon"></div>
+                            <span>Ultra HD</span>
+                            <small>3840x2160</small>
+                        </div>
+                        <div data="1080:1080" class="image-box new-canvas">
+                            <div class="holder"><img src="/img/icon/instagram.svg" class="icon"></div>
+                            <span>Instagram</span>
+                            <small>1080x1080</small>
+                        </div>
+                        <div data="1080:1920" class="image-box new-canvas">
+                            <div class="holder"><img src="/img/icon/instagram.svg" class="icon"></div>
+                            <span>Instagram story</span>
+                            <small>1080x1920</small>
+                        </div>
+
+                        <div data="828:465" class="image-box new-canvas">
+                            <div class="holder"><img src="/img/icon/facebook.svg" class="icon"></div>
+                            <span>Facebook cover</span>
+                            <small>828x465</small>
+                        </div>
+                        <div data="360:360" class="image-box new-canvas">
+                            <div class="holder"><img src="/img/icon/facebook.svg" class="icon"></div>
+                            <span>Facebook profile</span>
+                            <small>360x360</small>
+                        </div>
+                    </div>
+
+                    <div id="create-new-box">
+
+                        <div class="group">
+                            <label class="pad-0">Name</label>
+                            <input type="text" style="width:200px;" id="new-canvas-name" value="Untitled" />
+
+                            <label class="split pad-20">Width <input type="number" id="new-canvas-width" value="1920"/></label>
+                            <label class="split">Height <input type="number" id="new-canvas-height" value="1080"/></label>
+                            <label class="pad-10" style="text-align:right;font-size:10px;">Max 4096 x 4096 px</label>
+                            <input type="checkbox" id="new-canvas-background" />
+                            <label class="switch" for="new-canvas-background">Background<span></span></label>
+                            <div class="switch-content">
+                                <div id="new-canvas-background-color-picker" class="color-picker pad-0"></div>
+                            </div>
+                        </div>
+
+                        <div class="pad-30" style="text-align:right;">
+                            <a class="button positive" id="create-new">Create</a>
+                        </div>
+
+                    </div>
+                </div>
+            
+            </div>
+            <div id="template-content" style="display:none">Template</div>
+            <div id="search-content" style="display:none">
+                <div class="group" style="margin: 0 0 15px 0">
+                    <label class="hl pad-0">Search</label>
+                    <input id="search-input" type="text" style="width: 100%;" />
+                </div>
+            
+                <div id="search-content-result"></div>
+
+                <ul id="search-loading" class="loading">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+
+                <a class="button positive" id="search-more" style="display: none; margin: 15px auto 0 auto;">Load More</a>
+            </div>
+        </div>
+        
+            <div class="flatbox pad-16" id="example-photo" style="padding:20px">
+                    <div style="flex-grow: 4">Try editing a photo now</div>
+                    <div class="example-photo-slot"><img src="/photo/image-design-200108-pw.jpg" alt="image-design" /></div>
+                    <div class="example-photo-slot"><img src="/photo/image-editing-200108-pw.jpg" alt="image-editing" /></div>
+                    <div class="example-photo-slot"><img src="/photo/photo-shop-200108-pw.jpg" alt="photo-shop" /></div>
+                    <div class="example-photo-slot"><img src="/photo/online-image-editor-200108-pw.jpg" alt="online-image-editor" /></div>
+                    <div class="example-photo-slot"><img src="/photo/image-editor-200108-pw.jpg" alt="image-editor" /></div>
+                    <div id="native-bsa" class="bsa-block"></div>
+            </div>
+    </div>
+</div></div>
+    <div id="notification"></div>
+
+    <div id="config_data"></div>
+    <div id="config_i18n">{"name":"Name","untitled":"Untitled","width":"Width","height":"Height","apply":"Apply","amount":"Amount","ok":"OK","cancel":"Cancel","close":"Close","original":"Original","blendMode":"Blend Mode","max":"Max","background":"Background","create":"Create","template":"Template","search":"Search","loadMore":"Load More","save":"Save","open":"Open","load":"Load","loading":"Loading","size":"Size","softness":"Softness","transparency":"Transparency","image":"Image","opacity":"Opacity","step":"Step","source":"Source","spikes":"Spikes","quality":"Quality","font":"Font","text":"Text","draw":"Draw","empty":"Empty","drawing":"Drawing","angle":"Angle","tool":"Tool","aspect":"Aspect","brush":"Brush","paint":"Paint","blur":"Blur","back":"Back","erase":"Erase","color":"Color","shape":"Shape","layer":"Layer","layers":"Layers","visible":"Visible","hidden":"Hidden","top":"Top","left":"Left","advanced":"Advanced","download":"Download","strength":"Strength","density":"Density","reset":"Reset","tolerance":"Tolerance","canvas":"Canvas","fit":"Fit","fill":"Fill","minimize":"Minimize","maximize":"Maximize","language":"Language","preferences":"Preferences","editorPreferences":"Editor Preferences","dialogAddLayerTitle":"Add Layer","dialogAddLayerHL":"Select what type of layer to add","dialogChoiceTitle":"Open image","dialogChoiceHeadline":"Do you want to add the image as a layer in the current document or create a new?","dialogLoadTitle":"Loading","dialogLoadPrepare":"preparing ...","dialogLoadLoadingFrom":"Loading %s from %s ...","dialogLoadError":"Something went wrong when loading the image .. please try again later ...","dialogOpenURLTitle":"Open image URL","dialogOpenURLHeadline":"Image URL","dialogPreResizeTitle":"Pre-resize Image","dialogPreResizeInfo1":"The image you selected is very large ","dialogPreResizeInfo2":", resize it before you start edit to save on memory and minimize lag.","dialogPreResizeExif":"Auto rotate based on exif","dialogPreResizeMaxSize":"Max %d px","dialogResizeImageTitle":"Resize Image","dialogResizeCanvasTitle":"Resize Canvas","dialogResizeContrain":"Constrain proportions","dialogResizeApplyAll":"When applying resize all layers will be scaled.","dialogResizeRelative":"Relative change","dialogResizeAnchor":"Anchor Point","dialogResizeCropWarning":"When changing size any active crop tool will be reset, some cropping of layers may occur if new canvas size is smaller.","dialogSaveTitle":"Save image","dialogSaveName":"File name","dialogSaveFileType":"File type","dialogSaveLow":"Low","dialogSaveMed":"Med","dialogSaveHigh":"High","dialogSaveImageWidth":"Image width","dialogSaveImageHeight":"Image height","dialogSaveCalculate":"..calculating","dialogAiCutoutTitle":"AI Cutout","userLogin":"Login / Register","invert":"Invert","straighten":"Straighten","lineSize":"Line size","spacing":"Spacing","lineSpacing":"Line spacing","letterSpacing":"Letter spacing","noCutout":"No cutout","layerCreated":"Layer Created","sharpen":"Sharpen","smooth":"Smooth","dehaze":"Dehaze","grain":"Grain","clarity":"Clarity","vignette":"Vignette","fringe":"Fringe","pixelate":"Pixelate","bloom":"Bloom","posterize":"Posterize","glamour":"Glamour","mosaic":"Mosaic","vibrance":"Vibrance","saturation":"Saturation","temperature":"Temperature","tint":"Tint","hue":"Hue","brightness":"Brightness","exposure":"Exposure","contrast":"Contrast","black":"Black","white":"White","highlight":"Highlight","shadows":"Shadows","sinceDay":"A day ago","sinceDays":"%d days ago","sinceHour":"An hour ago","sinceHours":"%d hours ago","sinceMinute":"A minute ago","sinceMinutes":"%d minutes ago","sinceNow":"Just now","openImage":"Open image","loadURL":"Load url","openDragClip":"You can also drag and drop files or paste from the clipboard to open.","openExamples":"You may also begin editing with any of our images below.","dropFile":"Drop to open file","history":"History","createNew":"Create new","stockSearch":"Stock search","addCurrent":"Add current","backToEditor":"Back to editor","examplePhoto":"Try editing a photo now","welcomeHeadline":"Welcome to the Pixlr X Online Photo Editor.","noHistory":"There are no images in your history. Please \"Open Image\" or \"Load Url\" to start editing.","clearHistory":"Clear history","pinnedProjects":"Pinned projects","pinnedTip":"TIP! If you want to keep a document then click the heart icon to pin it.","last10Projects":"Last 10 projects","sizeWebSmall":"Web small","sizeWeb720":"Web 720p","sizeFullHD":"Full HD","sizeWeb1440":"Web 1440p","sizeUltraHD":"Ultra HD","sizeInstagram":"Instagram","sizeInstagramStory":"Instagram story","sizeFacebookCover":"Facebook cover","sizeFacebookProfile":"Facebook profile","historyClearConfirm":"Du you really want to clear the History?","historyDelete":"Delete","historyPin":"Pin","historyUnpin":"Unpin","historyDuplicate":"Duplicate","documentActions":"Document actions","hasCutout":"Has cutout","layerSettings":"Layer Settings","lockedBackground":"Locked background","addElement":"Add element","addCategory":"Add %s","viewAddElementRL":"Rotate Left","viewAddElementRR":"Rotate Right","viewAddElementFlipH":"Flip Horizontal","viewAddElementFlipV":"Flip Vertical","viewAddElementOverlay":"Overlay","viewAddElementBorder":"Border","viewAddElementShape":"Shape","viewAddElementSticker":"Sticker","viewAddElementDelete":"Delete element","viewAddImageTitle":"Add image","viewAddImageBrowse":"Browse","viewAddImageURL":"URL","viewAddImageStock":"Stock","viewAddLayerTitle":"Add Layer","viewAddLayerSelectType":"Select what type of layer to add","viewAddTextAdd":"Add new text","viewAddTextAlignNCase":"Align & case","viewAddTextAlignLeft":"Left align","viewAddTextAlignCenter":"Center align","viewAddTextAlignRight":"Right align","viewAddTextCaseUpper":"Uppercase","viewAddTextBackgroundFull":"Full","viewAddTextBackgroundLine":"Line","viewAddTextBackgroundWord":"Word","viewAddTextOutline":"Outline","viewAddTextShadow":"Shadow","viewAddTextShadowHorizOffset":"Horizontal pos","viewAddTextShadowVertOffset":"Vertical pos","viewAddTextDelete":"Delete text","viewAdjustTitle":"Adjust","viewAdjustAuto":"Auto fix","viewAdjustBNW":"Black & white","viewAdjustLight":"Light","viewAdjustToning":"Toning","viewAdjustHightlight":"Highlight","viewAdjustShadows":"Shadows","viewAdjustCurves":"Curves","viewAdjustChannel":"Channel","viewAdjustTip":"Double click to add or remove a control point.","viewAdjustLocked":"Only image layers can be adjusted, select another layer!","viewPropertiesTitle":"Properties","viewPropertiesResizeImage":"Resize image","viewPropertiesResizeCanvas":"Canvas size","viewArrangeTitle":"Arrange","viewArrangeLockAspect":"Lock aspect","viewArrangeRotate":"Rotate & flip","viewArrangeRL":"Rotate left","viewArrangeRR":"Rotate right","viewArrangeFlipH":"Flip horizontal","viewArrangeFlipV":"Flip vertical","viewArrangeDuplicate":"Duplicate","viewArrangeDelete":"Delete (del)","viewArrangeUnlock":"Unlock","viewArrangeTip":"Unlock layer to be able to do transforms.","viewArrangeLocked":"Select a layer in the right hand layer bar or add a new text, image or element!","viewBottomBarUndo":"Undo","viewBottomBarRedo":"Redo","viewBottomBarUndoTT":"Undo ctrl+z","viewBottomBarRedoTT":"Redo ctrl+y","viewBottomBarCloseTT":"Close (ctrl+q)","viewBottomBarSaveTT":"Save (ctrl+s)","viewCropTitle":"Crop","viewCropRotate":"Rotate & flip","viewCropRL":"Rotate left","viewCropRR":"Rotate right","viewCropFlipH":"Flip horizontal","viewCropFlipV":"Flip vertical","viewCropAspect":"Select aspect","viewCropRatio":"Ratio","viewCropPreset":"Preset","viewCropNone":"None","viewCropFixed":"Fixed ratio:","viewCrop1x1":"1:1 (Square)","viewCrop4x3":"4:3 (Monitor)","viewCrop16x9":"16:9 (Widescreen)","viewCrop3x1":"3:1 (Panorama)","viewCrop3x2":"3:2 (35mm film)","viewCrop21x9":"21:9 (Cinemascope)","viewCrop32x9":"32:9 (Super ultra wide)","viewCropOutput":"Output size:","viewCropFBProfile":"Facebook profile","viewCropFBCover":"Facebook cover","viewCropFBPost":"Facebook post","viewCropFBAd":"Facebook ad","viewCropInstaProfile":"Instragram profile","viewCropInstaPost":"Instagram post","viewCropInstaStory":"Instagram story","viewCropTwitProfile":"Twitter profile","viewCropTwitHeader":"Twitter header","viewCropTwitImage":"Twitter image","viewCropTwitCard":"Twitter card","viewCropTwitAd":"Twitter ad","viewCropYTProfile":"Youtube profile","viewCropYTChannelArt":"Youtube channel art","viewCropYTThumb":"Youtube thumb","viewCropWebMini":"Web mini 1024x768","viewCropWebSmall":"Web small 1280x800","viewCropWebCommon":"Web common 1366x768","viewCropWebMedium":"Web medium 1440x900","viewCropFHD":"Full HD 1920x1080","viewCropUHD":"Ultra HD 4x 3840x2160","viewCropPaperA4":"paper A4","viewCropPaperA5":"Paper A5","viewCropPaperA6":"Paper A6","viewCropPaperLet":"Paper letter","viewCropTip":"The size aspect will resize the image once the crop panel is closed.","viewCropReset":"Reset crop","viewCutoutTitle":"Cutout","viewCutoutTip":"Select a image or text layer to create a cutout on.","viewCutoutShape":"Shape cutout","viewCutoutMagic":"Magic cutout","viewCutoutDraw":"Draw cutout","viewCutoutLasso":"Lasso cutout","viewCutoutMode":"Mode","viewCutoutKeep":"Keep","viewCutoutRemove":"Remove","viewCutoutNone":"None","viewCutoutLight":"Light","viewCutoutMedium":"Medium","viewCutoutContigious":"Contiguous","viewCutoutShapeH":"Shape","viewCutoutSquare":"Square shape","viewCutoutCircle":"Cricle shape","viewCutoutTriangle":"Triangle shape","viewCutoutStar":"Star shape","viewCutoutHeart":"Heart shape","viewCutoutLine":"Line shape","viewCutoutHint":"Hint removed","viewCutoutExtract":"Extract as layer","viewCutoutInvert":"Invert cutout","viewCutoutReset":"Reset cutout","viewDrawBrushTool":"Brush tool","viewDrawShapeTool":"Shape tool","viewDrawEraserTool":"Eraser tool","viewDrawPenTool":"Pen tool","viewDrawShape":"Shape","viewDrawSquare":"Square shape","viewDrawCircle":"Cricle shape","viewDrawTriangle":"Triangle shape","viewDrawStar":"Star shape","viewDrawHeart":"Heart shape","viewDrawLine":"Line shape","viewDrawLineColor":"Line color","viewDrawFill":"Fill","viewDrawOutline":"Outline","viewDrawDelete":"Delete (del)","viewDrawLocked":"You can only draw on image layers!","viewEffectTitle":"Effect","viewEffectLocked":"Only image layers can have effects, select another layer!","viewFilterTitle":"Filter","viewFilterDetails":"Details","viewFilterScene":"Scene","viewFilterLocked":"Only image layers can have filters, select another layer!","viewKeyboardTitle":"Keyboard Shortcuts","viewKeyboardCtrlS":"Save","viewKeyboardCtrlQ":"Close","viewKeyboardESC":"Close Tool","viewKeyboardDEL":"Delete Layer","viewKeyboardCtrlP":"Zoom In","viewKeyboardCtrlM":"Zoom Out","viewKeyboardCtrl0":"Zoom Fit","viewKeyboardCtrl1":"Zoom 1X","viewKeyboardCtrl2":"Zoom Fill","viewKeyboardCtrl3":"Zoom 3X","viewKeyboardSpacebar":"Pan / Move","viewKeyboardP":"Properties","viewKeyboardV":"Arrange","viewKeyboardC":"Crop","viewKeyboardK":"Cutout","viewKeyboardA":"Adjust","viewKeyboardF":"Filter","viewKeyboardE":"Effect","viewKeyboardR":"Retouch","viewKeyboardB":"Draw","viewKeyboardT":"Text","viewKeyboardO":"Add Element","viewKeyboardI":"Add Image","viewKeyboardCtrlZ":"Undo","viewKeyboardCtrlY":"Redo","viewKeyboardMoveLayer":"Move Layer (position)","viewKeyboardMoveUp":"Up","viewKeyboardMoveDown":"Down","viewKeyboardMoveLeft":"Left","viewKeyboardMoveRight":"Right","viewKeyboardMoveShift":"Hold down Shift to step 10px","viewLiquifyTitle":"Liquify","viewLiquifyLocked":"You can only Liquify image layers, select another layer!","viewLiquifyMove":"Push","viewLiquifyGrow":"Enlarge","viewLiquifyShrink":"Shrink","viewLiquifySwirlCW":"Swirl right","viewLiquifySwirlCCW":"Swirl left","viewLiquifyErase":"Restore","viewLoadTitle":"Loading","viewRetouchTitle":"Retouch","viewRetouchLocked":"Retouch only works on image layers, select another layer.","viewRetouchHeal":"Heal / Repair","viewRetouchClone":"Clone stamp","viewRetouchDetail":"Sharpen / Blur","viewRetouchToning":"dodge / Burn","viewRetouchMethod":"Method","viewRetouchPatch":"Patch","viewRetouchInfill":"Infill","viewRetouchHQ":"High quality","viewRetouchMode":"Mode","viewRetouchAlign":"Aligned","viewRetouchBlur":"Blur","viewRetouchSharpen":"Sharpen","viewRetouchLighten":"Lighten","viewRetouchDarken":"Darken","viewRetouchRange":"Range","viewRetouchDark":"Dark","viewRetouchMid":"Mid","viewRetouchLight":"Light","viewTopBarFB":"Feedback","viewTopBarUndo":"Undo","viewTopBarRedo":"Redo","viewMenuToggleHome":"Toggle home","viewMenuProperties":"Properties","viewMenuPropertiesInfo":"Change canvas or image size, rotate, scale and change background color.","viewMenuPropertiesKB":"Keybord shortcut (P)","viewMenuArrange":"Arrange","viewMenuArrangeInfo":"Move, transform and change layer settings.","viewMenuArrangeKB":"Keybord shortcut (V)","viewMenuCrop":"Crop","viewMenuCropInfo":"Trim, cut, rotate and straighten the canvas by free or fixed aspect.","viewMenuCropKB":"Keybord shortcut (C)","viewMenuCutout":"Cutout","viewMenuCutoutInfo":"Remove background, cut out objects or crop/trim individual layers.","viewMenuCutoutKB":"Keybord shortcut (K)","viewMenuAdjust":"Adjust","viewMenuAdjustInfo":"Change vibrance, colors, lightness and other in bitmap layers.","viewMenuAdjustKB":"Keybord shortcut (A)","viewMenuFilter":"Filter","viewMenuFilterInfo":"Blur, sharpen, smooth, grain, vignette and other filters for bitmap layers.","viewMenuFilterKB":"Keybord shortcut (F)","viewMenuEffect":"Effect","viewMenuEffectInfo":"Use premade effects to change the look and feel of a bitmap layer.","viewMenuEffectKB":"Keybord shortcut (E)","viewMenuLiquify":"Liquify","viewMenuLiquifyInfo":"Grow, shrink and push parts of the image. Use liquify to make subtle adjustments to portraits and other images.","viewMenuLiquifyKB":"Keybord shortcut (Q)","viewMenuRetouch":"Retouch","viewMenuRetouchInfo":"Remove spots, unwanted objects, blemishes, perform whiten and darken or clone items.","viewMenuRetouchKB":"Keybord shortcut (R)","viewMenuDrawing":"Drawing","viewMenuDrawingInfo":"Draw and doodle with different shapes like square, circle and lines as well as brushes and colors.","viewMenuDrawingKB":"Keybord shortcut (B)","viewMenuText":"Text","viewMenuTextInfo":"Add new text layer or use one of our text templates.","viewMenuTextKB":"Keybord shortcut (T)","viewMenuAddElm":"Add Element","viewMenuAddElmInfo":"Add premade overlays, borders, shapes and stickers to your project.","viewMenuAddElmKB":"Keybord shortcut (O)","viewMenuAddImg":"Add Image","viewMenuAddImgInfo":"Upload or search for images to add to your project.","viewMenuAddImgKB":"Keybord shortcut (I)","viewOBarNav":"Navigate","viewOBarFit":"Fit Screen (ctrl+0)","viewOBarFill":"Fill Screen (ctrl+2)","viewOBarZ1X":"Actual Pixels (ctrl+1)","viewOBarZ3X":"3x Zoom (ctrl+3)","viewOBarMU":"Move up","viewOBarMD":"Move down","viewOBarZoomIn":"Zoom in","viewOBarZoomOut":"Zoom out","viewOBarSet":"Settings","viewOBarXSet":"X settings","viewOBarShowGu":"Show guides","viewOBarSnap":"Snap to guides","viewOBarLightUI":"Light ui mode","viewOBarDup":"Duplicate layer","viewOBarDel":"Delete layer (DEL)","blendModeNone":"None","blendModeMultiply":"Multiply","blendModeScreen":"Screen","blendModeOverlay":"Overlay","blendModeDarken":"Darken","blendModeLighten":"Lighten ","blendModeColorDodge":"Color-dodge","blendModeColorBurn":"Color-burn","blendModeHardLight":"Hard-light","blendModeSoftLight":"Soft-light","blendModeDifference":"Difference","blendModeExclusion":"Exclusion","blendModeHue":"Hue","blendModeSaturation":"Saturation","blendModeColor":"Color","blendModeLuminosity":"Luminosity","layerMergeDown":"Merge Down (CTRL+E)","layerMergeVisible":"Merge Visible","layerFlattenImage":"Flatten Image","historyAddelement":"Add element","historyDuplicateelement":"Duplicate element","historyDeleteelement":"Delete element","historyOpenbitmap":"Open image","historyAddbitmap":"Add image","historyPastebitmap":"Paste image","historyExtractbitmap":"Extract image","historyDuplicatebitmap":"Duplicate image","historyAddemptybitmap":"Add layer","historyNewemptybitmap":"New image","historyDeletebitmap":"Delete image","historyAddtext":"Add text","historyPastetext":"Paste text","historyDuplicatetext":"Duplicate text","historyDeletetext":"Delete text","historyClear":"Clear","historyLayerOpacity":"Layer transparancy","historyLayerBlendMode":"Layer blend mode","historyLayerVisible":"Layer visibility","historyLayerName":"Layer name","historyTextSize":"Size","historyTextFont":"Font","historyTextColor":"Color","historyTextAlign":"Align","historyTextUppercase":"Uppercase","historyTextBold":"Bold","historyTextItalic":"Italic","historyTextLetterspacing":"Letter spacing","historyTextLinespacing":"Line spacing","historyTextShadow":"Shadow","historyTextOutline":"Outline","historyTextBackground":"Background","historyText":"Text","historyBitmap":"Image","historyEffect":"Effect","historyAdjust":"Adjust","historyFilter":"Filter","historyArrange":"Arrange","historyDistort":"Distort","historyShape":"Shape","historyGradient":"Gradient","historyLayerLocked":"Layer unlocked","historyRasterizeText":"Rasterized text","historyRasterizeElement":"Rasterized element","historyFill":"Fill","historyHealPatch":"Heal patch","historyHealInfill":"Heal infill","historyLiquify":"Liquify","historyTextSettings":"Text settings","historyTextChange":"Text change","historyWand":"Wand","historyLasso":"Lasso","historyMarquee":"Marquee","historyDraw":"Draw","historyClone":"Clone","historyCrop":"Crop","historyDetail":"Detail","historyToning":"Toning","historyTemper":"Sponge","historyPen":"Pen","historyEraser":"Eraser","historyStraighten":"Straighten","historyBackground":"Background","historyImageResize":"Image resize","historyCanvasResize":"Canvas resize","historyMask":"Cutout / Mask","historyMaskInvert":"Cutout / Mask invert","historyMerge":"Merge layers","historyOrder":"Layer order","historyFlip":"Flip","historyRotate":"Rotate","historyDuplicated":"Duplicate","historyDeselect":"Deselect","historySelectionMove":"Move selection","historySelectionAll":"Select all","historySelectionPixels":"Select pixels","historySelectionInvert":"Invert selection","historyStroke":"Stroke","historyAuto":"Auto adjust","historyBrightnessContrast":"Brightness & Contrast","historyBrightness":"Brightness","historyContrast":"Brightness","historyTemperatureTint":"Temperature & Tint","historyTemperature":"Temperature","historyTint":"Tint","historyHueSaturation":"Hue & Saturation","historyHue":"Hue","historySaturation":"Saturation","historyVibrance":"Vibrance","historyBalance":"Color balance","historyLookup":"Color lookup","historyHighlightShadows":"Highlight & Shadows","historyHighlight":"Highlight","historyShadows":"Shadows","historyExposure":"Exposure","historyCurves":"Curves","historyLevels":"Levels","historyBlack":"Black","historyWhite":"White","historyThreshold":"Threshold","historyPosterize":"Posterize","historyDesaturate":"Desaturate","historyInvert":"Invert","historySharpen":"Sharpen","historyClarity":"Clarity","historyBlur":"Blur","historyGaussian":"Gaussian blur","historySmooth":"Smooth","historyDenoise":"Remove noise","historyGrain":"Grain","historyVignette":"Vignette","historyBloom":"Bloom","historyGlamour":"Glamour","historyDehaze":"Dehaze","historyFringe":"Fringe","historyPixelate":"Pixelate","historyMosaic":"Mosaic"}</div>
+
+    
+    <script src="/dist/x.11a713a960562e403ea8.js"></script>
+
+    
+    <script async src="/js/ffo.js"></script>
+    
+    <script>
+    (function() {
+      if (typeof _bsa !== 'undefined' && _bsa) {
+        _bsa.init('custom', 'CE7D453I', 'placement:pixlrcom',
+        {
+          target: '#native-bsa',
+          template: `
+          <a class="native-image" href="##statlink##" target="_blank" style="background-color: ##backgroundColor##">
+            <img class="native-logo" src="##logo##">
+            <div class="native-sponsor" style="color: ##textColor##">Sponsored by ##company##</div>
+          </a>
+        `
+            }
+          );
+      }
+      let subs = this.getCookie('user_type');
+      if (subs == 'true') {
+          document.getElementsByClassName('bsa-block')[0].style.display = 'none';
+          document.getElementsByClassName('bsa-block')[1].style.display = 'none';
+      }
+    })();
+    function BSANativeCallback(a) {
+        if(a.ads.length == 0) {
+            document.getElementById("native-bsa").style.display = "none";
+            var photoslots = document.getElementsByClassName('example-photo-slot');
+            for (var i = 0; i < photoslots.length; i++) {
+                photoslots[i].style.width = '19%';
+            }
+        }
+    }
+    function getCookie(name) {
+      let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+      if (match) return match[2];
+    }
+    </script>
+	
+	
+	
+	
+	
+	
+	
+		
+
+<!--百度自动推送代码-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    bp.src = '//push.zhanzhang.baidu.com/push.js';
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--百度自动推送代码-->
+
+
+<!-- 网址安全插件开始 -->
+<script type="text/javascript">
+	var _svq_ = _svq_ || [];
+	_svq_.push(['set_api_key', '16adflfafads9gf28327005056b68c3d']);
+	_svq_.push(['set_noicon_class', '']); //链接前不显示任何图标，如果需要显示，请去掉这句
+	_svq_.push(['set_nopopup_class', '-sv-no-popup']); 
+	_svq_.push(['check_page']);
+	(function(){   
+		var aq = document.createElement('script');
+		aq.type = 'text/javascript'; 
+		aq.async = true;   
+		aq.charset = 'utf-8';
+		aq.src = 'http://openapi.anquan.org/static/aq.js';    
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(aq, s); 
+	})();
+</script>	
+<!-- 网址安全插件结束 --> 
+
+<div style="display:none">
+    <script src="http://s11.cnzz.com/z_stat.php?id=610720&web_id=610720" language="JavaScript"></script>
+</div>
+
+<div class="copyright pr" style="text-align: center; margin-left: 0px;">
+	<p>
+		Copyright&nbsp;2004-01-11&nbsp;luhui.net&nbsp;all rights reserved
+	</p>
+</div>
+    </body>
+</html>

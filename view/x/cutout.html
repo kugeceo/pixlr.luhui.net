@@ -1,0 +1,102 @@
+
+<div class="title">§viewCutoutTitle§<img src="/img/icon/close.svg" id="cutout-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="cutout-content" class="content">
+
+    <section id="cutout-no-layer" style="display: none">
+        <span class="tip pad-20"><img src="/img/icon/tip-lock.svg" class="tip-icon"/>§viewCutoutTip§</span>
+    </section>
+
+    <section id="cutout-sub-tools">
+
+        <a class="button small outline pad-20" id="cutout-auto">AI CUTOUT</a>
+
+        <label class="pad-20">§tool§</label>
+        <div class="switch-icon-field stretch">
+                <input type="radio" id="cutout-type-shape" name="cutout-type" value="shape" checked/><label for="cutout-type-shape" tooltip="§viewCutoutShape§" flow="up-right"><img src="/img/tool/shape.svg" style="width:18px;height:18px;"/></label>
+            <input type="radio" id="cutout-type-magic" name="cutout-type" value="magic" /><label for="cutout-type-magic" tooltip="§viewCutoutMagic§" flow="up"><img src="/img/tool/wand.svg"/></label>
+            <input type="radio" id="cutout-type-brush" name="cutout-type" value="brush" /><label for="cutout-type-brush" tooltip="§viewCutoutDraw§" flow="up"><img src="/img/tool/draw.svg" style="width:20px;height:20px;"/></label>
+            <input type="radio" id="cutout-type-lasso" name="cutout-type" value="lasso" /><label for="cutout-type-lasso" tooltip="§viewCutoutLasso§" flow="up-left"><img src="/img/tool/lasso.svg"/></label>
+        </div>
+
+        <label class="pad-16">§viewCutoutMode§</label>
+        <div class="switch-field stretch">
+            <input type="radio" id="cutout-mode-keep" name="cutout-mode" value="keep" checked/><label for="cutout-mode-keep">§viewCutoutKeep§</label>
+            <input type="radio" id="cutout-mode-remove" name="cutout-mode" value="remove" /><label for="cutout-mode-remove">§viewCutoutRemove§</label>
+        </div>
+
+        <div class="splitter"></div>
+
+        <div id="cutout-magic-settings">
+
+            <div id="cutout-magic-tolerance" class="range-box pad-0"></div>
+
+            <label class="pad-10">§softness§</label>
+            <div class="switch-field stretch">
+                <input type="radio" id="cutout-magic-smooth-none" name="cutout-magic-smooth" value="none" checked /><label for="cutout-magic-smooth-none">§viewCutoutNone§</label>
+                <input type="radio" id="cutout-magic-smooth-light" name="cutout-magic-smooth" value="light" /><label for="cutout-magic-smooth-light">§viewCutoutLight§</label>
+                <input type="radio" id="cutout-magic-smooth-medium" name="cutout-magic-smooth" value="medium" /><label for="cutout-magic-smooth-medium">§viewCutoutMedium§</label>
+            </div>
+
+            <input type="checkbox" id="cutout-magic-contiguous" checked>
+            <label class="pad-24 switch" for="cutout-magic-contiguous">§viewCutoutContigious§<span></span></label>
+        </div>
+
+        <div id="cutout-brush-settings" style="display: none;">
+            <label>§brush§</label>
+            <div id="cutout-brush-preview-holder" class="brush-preview-holder">
+                <div id="cutout-brush-preview" class="brush-preview"></div>
+            </div>
+
+            <div id="cutout-brush-size" class="range-box pad-20"></div>
+            <div id="cutout-brush-hardness" class="range-box"></div>
+        </div>
+
+        <div id="cutout-lasso-settings" style="display: none;">
+
+            <label class="pad-0">§softness§</label>
+            <div class="switch-field stretch">
+                <input type="radio" id="cutout-lasso-smooth-none" name="cutout-lasso-smooth" value="none" checked /><label for="cutout-lasso-smooth-none">§viewCutoutNone§</label>
+                <input type="radio" id="cutout-lasso-smooth-light" name="cutout-lasso-smooth" value="light" /><label for="cutout-lasso-smooth-light">§viewCutoutLight§</label>
+                <input type="radio" id="cutout-lasso-smooth-medium" name="cutout-lasso-smooth" value="medium" /><label for="cutout-lasso-smooth-medium">§viewCutoutMedium§</label>
+            </div>
+
+        </div>
+
+        <div id="cutout-shape-settings" style="display: none;">
+
+            <label class="pad-0">§viewCutoutShapeH§</label>
+            <div class="switch-icon-field stretch">
+                <input type="radio" id="cutout-shape-type-square" name="cutout-shape-type" value="square" checked /><label for="cutout-shape-type-square"><img src="/img/icon/shape-square.svg" style="width:18px;height:18px;" title="§viewCutoutSquare§"/></label>
+                <input type="radio" id="cutout-shape-type-circle" name="cutout-shape-type" value="circle" /><label for="cutout-shape-type-circle"><img src="/img/icon/shape-circle.svg" style="width:18px;height:18px;" title="§viewCutoutCircle§"/></label>
+                <input type="radio" id="cutout-shape-type-triangle" name="cutout-shape-type" value="triangle" /><label for="cutout-shape-type-triangle"><img src="/img/icon/shape-triangle.svg" style="width:18px;height:18px;" title="§viewCutoutTriangle§"/></label>
+            </div>
+            <div class="switch-icon-field stretch pad-4">
+                <input type="radio" id="cutout-shape-type-star" name="cutout-shape-type" value="star" /><label for="cutout-shape-type-star"><img src="/img/icon/shape-star.svg" title="§viewCutoutStar§"/></label>
+                <input type="radio" id="cutout-shape-type-heart" name="cutout-shape-type" value="heart" /><label for="cutout-shape-type-heart"><img src="/img/icon/shape-heart.svg" title="§viewCutoutHeart§"/></label>
+                <input type="radio" id="cutout-shape-type-line" name="cutout-shape-type" value="line" /><label for="cutout-shape-type-line"><img src="/img/icon/shape-line.svg" style="width:18px;height:18px;" title="§viewCutoutLine§"/></label>
+            </div>
+
+            <label class="pad-16">§softness§</label>
+            <div class="switch-field stretch">
+                <input type="radio" id="cutout-shape-smooth-none" name="cutout-shape-smooth" value="none" checked /><label for="cutout-shape-smooth-none">§viewCutoutNone§</label>
+                <input type="radio" id="cutout-shape-smooth-light" name="cutout-shape-smooth" value="light" /><label for="cutout-shape-smooth-light">§viewCutoutLight§</label>
+                <input type="radio" id="cutout-shape-smooth-medium" name="cutout-shape-smooth" value="medium" /><label for="cutout-shape-smooth-medium">§viewCutoutMedium§</label>
+            </div>
+
+        </div>
+
+        <div class="splitter"></div>
+
+        <input type="checkbox" id="cutout-show-ghost">
+        <label class="pad-10 switch" for="cutout-show-ghost">§viewCutoutHint§<span></span></label>
+        
+        <a class="button outline pad-20" id="cutout-extract">§viewCutoutExtract§</a>
+        <a class="button outline pad-10" id="cutout-invert">§viewCutoutInvert§</a>
+        <a class="button outline pad-10" id="cutout-reset">§viewCutoutReset§</a>
+        <div class="pad-20"></div>
+    </section>
+</div>
+<div class="bottom">
+    <a class="button negative" id="cutout-cancel">§close§</a>
+</div>

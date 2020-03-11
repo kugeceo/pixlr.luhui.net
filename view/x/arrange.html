@@ -1,0 +1,85 @@
+
+<div class="title">§viewArrangeTitle§<img src="/img/icon/close.svg" id="arrange-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="arrange-content" class="content">
+
+    <section>
+
+        <div id="arrange-settings" style="display: block;">
+        
+            <label class="split pad-10">§top§ <input type="number" id="arrange-top"></label>
+            <label class="split">§left§ <input type="number" id="arrange-left"></label>
+
+            <label class="split">§width§ <input type="number" id="arrange-width"></label>
+            <label class="split" id="arrange-setting-height">§height§ <input type="number" id="arrange-height"></label>
+
+            <div id="arrange-lock-apect-holder">
+                <input type="checkbox" id="arrange-lock-aspect" checked>
+                <label class="switch pad-20" for="arrange-lock-aspect">§viewArrangeLockAspect§<span></span></label>
+            </div>
+
+            <div class="splitter small"></div>
+
+            <label>§viewArrangeRotate§</label>
+            <ul id="arrange-rotate" class="icon-button-set">
+                <li id="arrange-rotate-left" tooltip="§viewArrangeRL§" flow="up-right"><img src="/img/icon/rotate-left.svg"></li>
+                <li id="arrange-rotate-right" tooltip="§viewArrangeRR§" flow="up"><img src="/img/icon/rotate-right.svg"></li>
+                <li id="arrange-flip-horizontal" tooltip="§viewArrangeFlipH§" flow="up"><img src="/img/icon/flip-horizontal.svg"></li>
+                <li id="arrange-flip-vertical" tooltip="§viewArrangeFlipV§" flow="up-left"><img src="/img/icon/flip-vertical.svg"></li>
+            </ul>
+
+            <div class="splitter small"></div>
+
+            <label>§blendMode§</label>
+            <div class="select">
+                <select id="arrange-blend-mode">
+                    <option value="">None</option>
+                    <option value="multiply">Multiply</option>
+                    <option value="screen">Screen</option>
+                    <option value="overlay">Overlay</option>
+                    <option value="darken">Darken</option>
+                    <option value="lighten">Lighten</option>
+                    <option value="color-dodge">Color-dodge</option>
+                    <option value="color-burn">Color-burn</option>
+                    <option value="hard-light">Hard-light</option>
+                    <option value="soft-light">Soft-light</option>
+                    <option value="difference">Difference</option>
+                    <option value="exclusion">Exclusion</option>
+                    <option value="hue">Hue</option>
+                    <option value="saturation">Saturation</option>
+                    <option value="color">Color</option>
+                    <option value="luminosity">Luminosity</option>
+                </select>
+            </div>
+
+            <div id="arrange-transparency" class="range-box pad-16"></div>
+            
+            <div class="splitter small"></div>
+    
+            <ul class="icon-button-set pad-20">
+                <li id="arrange-duplicate" tooltip="§viewArrangeDuplicate§" flow="up-right"><img src="/img/icon/copy.svg"/></li>
+                <li id="arrange-delete"  tooltip="§viewArrangeDelete§" flow="up-right"><img src="/img/icon/delete.svg"></li>
+            </ul>
+    
+        </div>
+        
+        <div id="arrange-layer-locked" style="display: none;">
+            <label class="hl">§layer§</label>
+            <a class="button small outline pad-10" id="arrange-convert"><img src="/img/icon/locked.svg">§viewArrangeUnlock§</a>
+            <a class="button small outline pad-10" id="arrange-duplicate-button"><img src="/img/icon/copy.svg">§viewArrangeDuplicate§</a>
+        
+            <div class="tip pad-20">§viewArrangeTip§</div>
+        </div>
+
+        <div id="arrange-no-layer" style="display: none;">
+            
+            <span class="tip pad-20"><img src="/img/icon/tip-bulb.svg" class="tip-icon">§viewArrangeLocked§</span>
+        </div>
+        <div class="pad-20"></div>
+
+    </section>
+</div>
+
+<div class="bottom">
+    <a class="button negative" id="arrange-cancel">§close§</a>
+</div>

@@ -1,0 +1,95 @@
+
+<div class="title">§viewRetouchTitle§<img src="/img/icon/close.svg" id="retouch-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="retouch-content" class="content">
+
+    <section id="retouch-no-layer" style="display: none">
+        <span class="tip pad-20"><img src="/img/icon/tip-lock.svg" class="tip-icon"/>§viewRetouchLocked§</span>
+    </section>
+
+    <section id="retouch-sub-tools">
+
+        <label class="pad-20">§tool§</label>
+        <div class="switch-icon-field stretch">
+            <input type="radio" id="retouch-type-heal" name="retouch-type" value="heal" checked /><label for="retouch-type-heal" tooltip="§viewRetouchHeal§" flow="up-right"><img src="/img/tool/heal.svg"/></label>
+            <input type="radio" id="retouch-type-clone" name="retouch-type" value="clone" /><label for="retouch-type-clone" tooltip="§viewRetouchClone§" flow="up"><img src="/img/tool/clone.svg"/></label>
+            <input type="radio" id="retouch-type-detail" name="retouch-type" value="detail" /><label for="retouch-type-detail" tooltip="§viewRetouchDetail§" flow="up"><img src="/img/tool/detail.svg"/></label>
+            <input type="radio" id="retouch-type-toning" name="retouch-type" value="toning" /><label for="retouch-type-toning" tooltip="§viewRetouchToning§" flow="up-left"><img src="/img/tool/toning.svg"/></label>
+        </div>
+        <div class="splitter"></div>
+
+        <div id="retouch-heal-settings">
+            <label class="pad-16">§viewRetouchMethod§</label>
+            <div class="switch-field stretch">
+                <input type="radio" id="heal-mode-patch" name="heal-mode" value="patch" checked /><label for="heal-mode-patch">§viewRetouchPatch§</label>
+                <input type="radio" id="heal-mode-infill" name="heal-mode" value="infill" /><label for="heal-mode-infill">§viewRetouchInfill§</label>
+            </div>
+
+            <div id="heal-brush-size" class="range-box pad-20"></div>
+            <br/>
+        </div>
+
+        <div id="retouch-clone-settings">
+
+            <label class="pad-16">§viewRetouchMode§</label>
+            <div class="switch-field stretch">
+                <input type="radio" id="clone-mode-paint" name="clone-mode" value="paint" /><label for="clone-mode-paint">§paint§</label>
+                <input type="radio" id="clone-mode-source" name="clone-mode" value="source" checked /><label for="clone-mode-source">§source§</label>
+            </div>
+            <label class="pad-20">§brush§</label>
+            <div id="clone-brush-preview-holder" class="brush-preview-holder">
+                <div id="clone-brush-preview" class="brush-preview"></div>
+            </div>
+    
+            <div id="clone-brush-size" class="range-box pad-20"></div>
+            <div id="clone-brush-hardness" class="range-box"></div>
+            <div id="clone-brush-transparency" class="range-box"></div>
+
+            <input type="checkbox" id="clone-aligned" />
+            <label class="pad-16 switch" for="clone-aligned">§viewRetouchAlign§<span></span></label>
+        </div>
+
+        <div id="retouch-detail-settings">
+            <label class="pad-16">§viewRetouchMode§</label>
+            <div class="switch-field stretch">
+                <input type="radio" id="detail-mode-blur" name="detail-mode" value="blur" checked/><label for="detail-mode-blur">§viewRetouchBlur§</label>
+                <input type="radio" id="detail-mode-sharpen" name="detail-mode" value="sharpen"/><label for="detail-mode-sharpen">§viewRetouchSharpen§</label>
+            </div>
+            <label class="pad-20">§brush§</label>
+            <div id="detail-brush-preview-holder" class="brush-preview-holder">
+                <div id="detail-brush-preview" class="brush-preview"></div>
+            </div>
+    
+            <div id="detail-brush-size" class="range-box pad-20"></div>
+            <div id="detail-brush-hardness" class="range-box"></div>
+            <div id="detail-brush-strength" class="range-box"></div>
+        </div>
+
+        <div id="retouch-toning-settings">
+            <label class="pad-16">§viewRetouchMode§</label>
+            <div class="switch-field stretch">
+                <input type="radio" id="toning-mode-lighten" name="toning-mode" value="lighten" checked/><label for="toning-mode-lighten">§viewRetouchLighten§</label>
+                <input type="radio" id="toning-mode-darken" name="toning-mode" value="darken"/><label for="toning-mode-darken">§viewRetouchDarken§</label>
+            </div>
+            <label class="pad-20">§viewRetouchRange§</label>
+            <div class="switch-field stretch">
+                <input type="radio" id="toning-range-shadow" name="toning-range" value="shadow"/><label for="toning-range-shadow">§viewRetouchDark§</label>
+                <input type="radio" id="toning-range-midtone" name="toning-range" value="midtone" checked/><label for="toning-range-midtone">§viewRetouchMid§</label>
+                <input type="radio" id="toning-range-highlight" name="toning-range" value="highlight"/><label for="toning-range-highlight">§viewRetouchLight§</label>
+            </div>
+            <label class="pad-20">§brush§</label>
+            <div id="toning-brush-preview-holder" class="brush-preview-holder">
+                <div id="toning-brush-preview" class="brush-preview"></div>
+            </div>
+    
+            <div id="toning-brush-size" class="range-box pad-20"></div>
+            <div id="toning-brush-hardness" class="range-box"></div>
+            <div id="toning-brush-strength" class="range-box"></div>
+        </div>
+
+        <div class="pad-20"></div>
+    </section>
+</div>
+<div class="bottom">
+    <a class="button negative" id="retouch-cancel">§close§</a>
+</div>

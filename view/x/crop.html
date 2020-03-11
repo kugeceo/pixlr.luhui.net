@@ -1,0 +1,87 @@
+
+<div class="title">§viewCropTitle§<img src="/img/icon/close.svg" id="crop-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="crop-content" class="content">
+    <section>
+
+        <label class="split pad-16">§width§ <input type="number" id="crop-width"/></label>
+        <label class="split">§height§ <input type="number" id="crop-height"/></label>
+
+        <div id="crop-straighten" class="range-box pad-20"></div>
+
+        <div class="splitter small"></div>
+
+        <div>
+            <input type="checkbox" id="crop-aspect" />
+            <label class="pad-0 switch" for="crop-aspect">§viewCropAspect§<span></span></label>
+            <div class="switch-content">
+
+                <div class="switch-field stretch ">
+                    <input type="radio" id="crop-aspect-ratio" name="crop-aspect-mode" value="ratio" checked /><label for="crop-aspect-ratio">§viewCropRatio§</label>
+                    <input type="radio" id="crop-aspect-size" name="crop-aspect-mode" value="size"  /><label for="crop-aspect-size">§size§</label>
+                </div>
+                <label class="split pad-16">§width§ <input type="number" id="crop-aspect-width" value="1"/></label>
+                <label class="split">§height§ <input type="number" id="crop-aspect-height" value="1"/></label>
+
+                <label class="pad-10">§viewCropPreset§</label>
+                <div class="select pad-4">
+                    <select id="crop-aspect-preset">
+                        <option value="0:0">§viewCropNone§</option>
+                        <option value="" disabled>§viewCropFixed§</option>
+                        <option value="x:y">§original§</option>
+                        <option value="1:1" selected>§viewCrop1x1§</option>
+                        <option value="4:3">§viewCrop4x3§</option>
+                        <option value="14:9">14:9</option>
+                        <option value="16:9">§viewCrop16x9§</option>
+                        <option value="16:10">16:10</option>
+                        <option value="2:1">2:1</option>
+                        <option value="3:1">§viewCrop3x1§</option>
+                        <option value="4:1">4:1</option>
+                        <option value="3:2">§viewCrop3x2§</option>
+                        <option value="5:4">5:4</option>
+                        <option value="7:5">7:5</option>
+                        <option value="19:10">19:10</option>
+                        <option value="21:9">§viewCrop21x9§</option>
+                        <option value="32:9">§viewCrop32x9§</option>
+                        <option value="" disabled>§viewCropOutput§</option>
+                        <option value="180:180">§viewCropFBProfile§</option>
+                        <option value="851:315">§viewCropFBCover§</option>
+                        <option value="1200:900">§viewCropFBPost§</option>
+                        <option value="1280:720">§viewCropFBAd§</option>
+                        <option value="180:180">§viewCropInstaProfile§</option>
+                        <option value="1080:1080">§viewCropInstaPost§</option>
+                        <option value="1080:1920">§viewCropInstaStory§</option>
+                        <option value="150:150">§viewCropTwitProfile§</option>
+                        <option value="1500:500">§viewCropTwitHeader§</option>
+                        <option value="1024:512">§viewCropTwitImage§</option>
+                        <option value="1200:628">§viewCropTwitCard§</option>
+                        <option value="1200:675">§viewCropTwitAd§</option>
+                        <option value="800:800">§viewCropYTProfile§</option>
+                        <option value="2560:1440">§viewCropYTChannelArt§</option>
+                        <option value="1280:720">§viewCropYTThumb§</option>
+                        <option value="1024:768">§viewCropWebMini§</option>
+                        <option value="1280:800">§viewCropWebSmall§</option>
+                        <option value="1366:768">§viewCropWebCommon§</option>
+                        <option value="1440:900">§viewCropWebMedium§</option>
+                        <option value="1920:1080">§viewCropFHD§</option>
+                        <option value="3840:2160">§viewCropUHD§</option>
+                        <option value="2480:3508">§viewCropPaperA4§</option>
+                        <option value="1748:2480">§viewCropPaperA5§</option>
+                        <option value="1280:1748">§viewCropPaperA6§</option>
+                        <option value="2400:3300">§viewCropPaperLet§</option>
+                    </select>
+                </div>
+                <span id="crop-aspect-size-tip" style="display: none" class="tip pad-10">§viewCropTip§</span>
+                <div style="clear: both"></div>
+            </div>
+        </div>
+
+        <a class="button outline pad-20" id="crop-reset">§viewCropReset§</a>
+
+        <div class="pad-20"></div>
+    </section>
+</div>
+
+<div class="bottom">
+    <a class="button does negative" id="crop-cancel">§cancel§</a><a class="button does positive" id="crop-apply">§apply§</a>
+</div>

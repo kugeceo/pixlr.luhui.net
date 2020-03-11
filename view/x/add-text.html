@@ -1,0 +1,88 @@
+
+<div class="title">§text§<img src="/img/icon/close.svg" id="add-text-close" class="close" /></div>
+<div class="splitter"></div>
+<div id="add-text-content" class="content">
+
+    <section>
+        <div id="add-text-button" class="pad-16">
+            <img src="/img/icon/layer-text.svg" id="add-text-icon" />
+            <div id="add-text-label">§viewAddTextAdd§</div>
+        </div>
+    </section>
+  
+    <section id="add-text-settings">
+
+        <div class="splitter"></div>
+
+        <label>§text§</label>
+        <textarea aria-autocomplete="none" spellcheck="false" id="text-input"></textarea>
+
+        <label class="pad-16">§viewAddTextAlignNCase§</label>
+        <ul class="icon-button-set">
+            <li id="text-align-left" data="left" tooltip="§viewAddTextAlignLeft§" flow="up-right"><img src="/img/icon/align-left.svg"/></li>
+            <li id="text-align-center" data="center" tooltip="§viewAddTextAlignCenter§" flow="up"><img src="/img/icon/align-center.svg"/></li>
+            <li id="text-align-right" data="right" tooltip="§viewAddTextAlignRight§" flow="up"><img src="/img/icon/align-right.svg"/></li>
+            <li id="text-uppercase" tooltip="§viewAddTextCaseUpper§" flow="up-left"><img src="/img/icon/uppercase.svg"/></li>
+            <li id="text-italic" tooltip="italic" flow="up-right" style="margin-top:8px;"><img src="/img/icon/italic.svg" /></li>
+            <li id="text-bold" tooltip="bold" flow="up" style="margin-top:8px;"><img src="/img/icon/bold.svg" /></li>
+        </ul>
+
+        <label class="pad-16">§font§</label>
+        <div id="text-font-picker" class="font-picker"></div>
+
+        <label class="pad-16">§color§</label>
+        <div id="text-color-picker" class="color-picker"></div>
+
+        <div class="splitter small"></div>
+
+        <div id="text-size" class="range-box pad-0"></div>
+        <div id="line-spacing" class="range-box pad-8"></div>
+        <div id="letter-spacing" class="range-box pad-8"></div>
+
+        <div class="splitter small"></div>
+
+        <div>
+            <input type="checkbox" id="text-background" />
+            <label class="pad-0 switch" for="text-background">§background§<span></span></label>
+            <div class="switch-content">
+                <div id="text-background-color-picker" class="color-picker"></div>
+                <div id="text-background-type" class="switch-field stretch pad-16">
+                    <input type="radio" id="text-background-type-full" name="background-type" value="full" checked/><label for="text-background-type-full">§viewAddTextBackgroundFull§</label>
+                    <input type="radio" id="text-background-type-line" name="background-type" value="line" /><label for="text-background-type-line">§viewAddTextBackgroundLine§</label>
+                    <input type="radio" id="text-background-type-word" name="background-type" value="word" /><label for="text-background-type-word">§viewAddTextBackgroundWord§</label>
+                </div>
+            </div>
+        </div>
+        <div class="splitter small"></div>
+        <div>
+            <input type="checkbox" id="text-outline" />
+            <label class="pad-0 switch" for="text-outline">§viewAddTextOutline§<span></span></label>
+            <div class="switch-content">
+                <div id="text-outline-size" class="range-box pad-0"></div>
+                <label>§color§</label>
+                <div id="text-outline-color-picker" class="color-picker pad-4"></div>
+            </div>
+        </div>
+        <div class="splitter small"></div>
+        <div>
+            <input type="checkbox" id="text-shadow" />
+            <label class="pad-0 switch" for="text-shadow">§viewAddTextShadow§<span></span></label>
+            <div class="switch-content">
+                <div id="text-shadow-blur" class="range-box pad-0"></div>
+                <div id="text-shadow-vertical-offset" class="range-box"></div>
+                <div id="text-shadow-horizontal-offset" class="range-box"></div>
+                <div id="text-shadow-alpha" class="range-box"></div>
+                <label>§color§</label>
+                <div id="text-shadow-color-picker" class="color-picker pad-4"></div>
+            </div>
+        </div>
+        <div class="splitter small"></div>
+        <ul class="icon-button-set pad-20">
+            <li id="text-delete" tooltip="§viewAddTextDelete§" flow="up-right"><img src="/img/icon/delete.svg" title="§viewAddTextDelete§"/></li>
+        </ul>
+        <div class="pad-20"></div>
+    </section>
+</div>
+<div class="bottom">
+    <a class="button negative" id="add-text-cancel">§close§</a>
+</div>
