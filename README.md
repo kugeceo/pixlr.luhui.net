@@ -3,6 +3,7 @@ luhui Photo editor online。Discover free and premium online photo editor! Effec
 
 
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/9267191f-6a0e-43f7-85a1-b2660e5e76a6/deploy-status)](https://app.netlify.com/sites/pixlr/deploys)
 
 
 
